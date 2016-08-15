@@ -2,30 +2,30 @@ angular.module("myApp", ["ngRoute"])
 .config(function($routeProvider) {
 	$routeProvider
 		.when("/", {
-			template : "main text"
+			templateUrl : 'templates/main.html'
 		})
 		.when("/creative", {
-			template : "creative"
+			templateUrl : "templates/creative.html"
 		})
 		.when("/social", {
-			template : "social"
+			templateUrl : "templates/social.html"
 		})
 		.when("/blog", {
-			template : "blog"
+			templateUrl : "templates/blog.html"
 		})
-		.when("/geeky", {
-			template : "geeky"
+		.when("/site", {
+			templateUrl : "templates/site.html"
 		})
 		.when("/projects", {
-			template : "projects"
+			templateUrl : "templates/projects.html"
 		})
 		.when("/resume", {
-			template : "resume"
+			templateUrl : "templates/resume.html"
 		})
 		.when("/about", {
-			template : "about"
+			templateUrl : "templates/about.html"
 		})
 		.when("/contact", {
-			template : "contact"
+			templateUrl : "templates/contact.html"
 		});
 });
