@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IanSegers.Com</title>
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="IanSegers.Com" />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="www.iansegers.com" />
+	<meta property="og:site_name" content="www.iansegers.com" />
+	<meta property="og:image" content="http://www.iansegers.com/assets/img/profile.jpg" />
+	<meta property="og:description" content="Learn more about Ian Segers, his blogs, his resume and his projects." />
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+	<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" >
+	<link rel="stylesheet" href="assets/css/style.css" >
+
+	<!-- JS -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+
+</head>
+
+<body ng-app="myApp">
+
+<div class="container-fluid main-container">
+
+	<div class="row">
+		<div class="col-lg-4 cta-box"> <a href="#creative">Creative</a></div>
+		<div class="col-lg-4 cta-box"> <a href="#social">Social</a></div>
+		<div class="col-lg-4 cta-box"> <a href="#blog">Blog</a></div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-4 cta-box"> <a href="#site">Geeky</a></div>
+		<div class="col-lg-4 cta-box"> <a href="#/"><img src="assets/img/profile.jpg"></a> </div>
+		<div class="col-lg-4 cta-box"> <a href="#projects">My Projects</a></div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-4 cta-box"> <a href="#resume">Interests</a></div>
+		<div class="col-lg-4 cta-box"> <a href="#about">Who I am</a></div>
+		<div class="col-lg-4 cta-box"> <a href="#contact">Contact</a></div>
+	</div>
+
+</div>
+
+<div ng-view></div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

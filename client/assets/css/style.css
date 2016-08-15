@@ -1,0 +1,47 @@
+body{
+	text-align: center;
+	vertical-align: middle;
+	padding: 60px 0 0 0;
+	background-color: #C26E28;
+}
+
+.main-container{
+	width: 600px;
+}
+
+.main-image{
+	border-radius: inherit;
+	height: 180px;
+}
+
+.cta-box{
+	border: 5px solid #C26E28;
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	padding: 0px 0px 0px 0px !important;
+	margin: 0px 0px 0px 0px !important;
+}
+
+.cta-box img{
+	border-radius: inherit;
+	margin: -5px 0px 0px -5px !important;
+	height: 200px;
+}
+
+.cta-box a{
+	border: 5px solid #C26E28;
+	height: 200px;
+	width: 200px;
+	display: block;
+	padding: 42% 0 0 0;
+	border-radius: 50%;
+	margin: -5px 0px 0px -5px !important;
+	color: #D5DBD1;
+}
+
+.cta-box a:hover{
+	border: 5px solid #D5DBD1;
+	text-decoration: none;
+	border-radius: 50%;
+}
