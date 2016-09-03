@@ -8,12 +8,13 @@ $colorText : rgb(212,212,212);
 $colorHighlightRed : rgb(242,31,28);
 $colorCommentGreen : rgb(96, 137, 77);
 
-$fontFamilyTextEditor : "Menlo, Monaco, 'Courier New', monospace";
-$fontFamilyOnlineJson : "Consolas, "Courier New", monospace";
+//$fontFamilyTextEditor : "Menlo, Monaco, 'Courier New', monospace";
+$fontFamilyTextEditor : "Menlo";
+$fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
 
 *{
 	color: $colorText;
-	font: $fontFamilyTextEditor;
+	font-family: $fontFamilyTextEditor;
 	font-size: 1em;
 }
 
@@ -23,42 +24,118 @@ body{
 	background-color: $colorBackground;
 }
 
-
 .flex-container{
 	display: flex;
-	border: thin solid $colorText;
 }
 
 .flex-item{
 	flex-grow: 1;
 }
 
-.profile-image{
-	height: 16em;
-	width: 16em;
-	background: url("../img/profile.jpg") center ;
-	background-size: 16em 16em;
-}
-
 .tab{
 	margin-left: 2em;
 }
 
-.json{
-	text-align: left;
+.resume{
 
+	progress {
+		background-color: inherit;
+		border: 1px solid $colorGoldBrown;
+	}
 
+	progress::-webkit-progress-bar {
+		background-color: inherit;
+	}
 
-	.field{
+	progress::-webkit-progress-value {
+		background-color: $colorGoldBrown;
+	}
+
+	progress::-moz-progress-bar {
+		background-color: inherit;
+	}
+
+	h1{
+		color: $colorDefaultBlue;
+	}
+
+	h1, h2, h3{
+		text-transform: lowercase;
+		font-weight: normal;
+	}
+
+	h1:before{
+		content: "{";
+	}
+
+	h1:after{
+		content: "}";
+	}
+
+	h2{
+		@extend .tab;
+	}
+
+	h2:before{
+		content: "{";
+	}
+
+	h2:after{
+		content: "}";
+	}
+
+	h2{
 		color: $colorHighlightBlue;
 	}
 
-	.comment{
-		color: $colorCommentGreen;
+	h3{
+		@extend .tab;
+		color: $colorGoldBrown;
 	}
 
-	.value-string{
-		color: $colorGoldBrown
+	ul:nth-child(2){
+		@extend .tab;
+	}
+
+	h3:before{
+		content: "{";
+	}
+
+	h3:after{
+		content: "}";
+	}
+
+	ul{
+		list-style-type: none;
+	}
+
+	.profile-image{
+		height: 16em;
+		width: 16em;
+		background: url("../img/profile.jpg") center ;
+		background-size: 16em 16em;
+	}
+
+	.svg-volume{
+
+	}
+
+	.json{
+		text-align: left;
+
+		.field{
+			color: $colorHighlightBlue;
+		}
+
+		.comment{
+			color: $colorCommentGreen;
+		}
+
+		.value-string{
+			color: $colorGoldBrown
+		}
 	}
 }
+
+
 

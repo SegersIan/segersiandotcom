@@ -25,45 +25,142 @@
 		<link rel="stylesheet" href="assets/css/style.css" >
 
 		<!-- JS -->
-		<!--
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<!--
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		-->
 
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="bower_components/angular-route/angular-route.min.js"></script>
 
+
+
 	</head>
 
-	<body ng-app="myApp">
+	<body ng-app="myApp" class="resume" onload="draw();">
 
-		<section class="flex-container">
+		<section>
+			<svg id="mySvg" class="svg-volume" height="30px" width="30px" style="background-color: inherit;" data-value="50">
+				<path id="voidMask" fill="none" stroke="rgb(0,0,0)" stroke-linecap="round" />
+				<path id="valueMask" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+				<path id="valuePointer" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+			</svg>
 
-			<div class="profile-image"> </div>
+			JavaScript
+		</section>
 
-			<div class="flex-item json" style="padding: 1em 1em 1em 1em">
+		<script>
+			function draw() {
+				var svgVolumeControls = $(".svg-volume");
+
+				svgVolumeControls.each(function () {
+					var mySvg = $("#mySvg");
+
+					var angleOfValueMin = -150;
+					var angleOfValueMax = 150;
+
+					var width = mySvg.width();
+					var height = mySvg.height();
+					var value = mySvg.attr("data-value");
+
+					var angleOfValue = (angleOfValueMin) + (value * 3);
+
+					var centerX = width / 2;
+					var centerY = height / 2;
+					var radiusInner = centerX * 0.5;
+					var radiusOuter = centerX * 0.90;
+
+					var strokeWidth = width * 0.10;
+
+					document.getElementById("voidMask").setAttribute("d", drawMyArc(centerX, centerY, radiusOuter, angleOfValue, angleOfValueMax));
+					document.getElementById("voidMask").setAttribute("stroke-width",strokeWidth);
+
+					document.getElementById("valueMask").setAttribute("d", drawMyArc(centerX, centerY, radiusOuter, angleOfValueMin, angleOfValue));
+					document.getElementById("valueMask").setAttribute("stroke-width",strokeWidth);
+
+					document.getElementById("valuePointer").setAttribute("d", drawMyPointer(centerX, centerY, radiusInner, radiusOuter, angleOfValue));
+					document.getElementById("valuePointer").setAttribute("stroke-width",strokeWidth);
+
+					});
+				}
+
+			function drawMyArc(centerX, centerY, radius, startAngle, endAngle) {
+
+				var start = polarToCartesian(centerX, centerY, radius, endAngle);
+				var end = polarToCartesian(centerX, centerY, radius, startAngle);
+
+				var largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+
+				var d = [
+					"M", start.x, start.y,
+					"A", radius, radius, 0, largeArcFlag, 0, end.x, end.y
+				].join(" ");
+
+				return d;
+			}
+
+			function drawMyPointer(centerX, centerY, innerRadius, outerRadius, valueAngle) {
+
+				var start = polarToCartesian(centerX, centerY, innerRadius, valueAngle);
+
+				var end = polarToCartesian(centerX, centerY, outerRadius, valueAngle);
+
+				/*
+				var largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+
+				var d = [
+					"M", centerX, start.y,
+					"A", radius, radius, 0, largeArcFlag, 0, end.x, end.y
+				].join(" ");
+
+                */
+
+
+				var d = [
+					"M", start.x, start.y,
+						"L", end.x,end.y
+				].join(" ");
+				return d;
+			}
+
+			function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+				var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
+
+				return {
+					x: centerX + (radius * Math.cos(angleInRadians)),
+					y: centerY + (radius * Math.sin(angleInRadians))
+				};
+			}
+
+		</script>
+
+		<section>
+			<h1>Demographics</h1>
+			<div class="json">
 				{<br>
 				<span class="tab"></span><span class="field">"name"</span>: <span class="value-string">"Ian Segers"</span>,<br>
+				<span class="tab"></span><span class="field">"skill"</span>: <progress max="5" value="1"></progress> ,<br>
+				<span class="tab"></span><span class="field">"skill"</span>: <progress max="5" value="1"></progress> ,<br>
 				<span class="tab"></span><span class="field">"location"</span>: <span class="value-string">"Berlin, Germany"</span>,<br>
 				<span class="tab"></span><span class="field">"nationality"</span>: <span class="value-string">"Belgian"</span>,<br>
 				<span class="tab"></span><span class="field">"contact"</span>: <span class="value-string">"iansegers@gmail.com"</span>,<br>
-				<span class="tab"></span><span class="field">"birthdate"</span>: {<br>
-				<span class="tab"></span><span class="tab"></span><span class="field">"timestamp"</span>: <span class="value-string">579859200</span>,<br>
-				<span class="tab"></span><span class="tab"></span><span class="field">"formatted"</span>: <span class="value-string">"17th of May, 1988"</span>,<br>
-				<span class="tab">}</span><br>
+				<span class="tab"></span><span class="field">"birthdate"</span>: <span class="value-string">"17th of May, 1988"</span><br>
 				}
 			</div>
+		</section>
 
-			<div class="flex-item">
-				&lt/FindMeOn&gt <br>
-				<span class="tab"></span> <a target="_blank" href="http://stackoverflow.com/users/713456"><i class="fa fa-stack-overflow"></i>StackOverflow</a> <br>
-				<span class="tab"></span> <a target="_blank" href="https://github.com/SegersIan"><i class="fa fa-github"></i>GitHub</a> <br>
-				<span class="tab"></span> <a target="_blank" href="https://linkedin.com/in/segersian"><i class="fa fa-linkedin"></i>LinkedIn</a> <br>
-				<span class="tab"></span> <a target="_blank" href="https://twitter.com/SegersIan"><i class="fa fa-twitter"></i>@SegersIan</a> <br>
-				<span class="tab"></span> <a target="_blank" href="https://vimeo.com/segersian"><i class="fa fa-vimeo"></i>Vimeo</a> <br>
-				<span class="tab"></span> <a target="_blank" href="https://angel.co/segers_ian"><i class="fa fa-angellist"></i>AngelList</a> <br>
-				<span class="tab"></span> <i class="fa fa-skype"></i><a target="_blank" href="skype:segers_ian?call">Call</a> or <a target="_blank" href="skype:segers_ian?chat"></i>chat</a><br>
-			</div>
+		<section>
+			<h1>links</h1>
+			<ul>
+				<li> <a target="_blank" href="http://stackoverflow.com/users/713456"><i class="fa fa-stack-overflow"></i>StackOverflow</a></li>
+				<li> <a target="_blank" href="https://github.com/SegersIan"><i class="fa fa-github"></i>GitHub</a> </li>
+				<li> <a target="_blank" href="https://linkedin.com/in/segersian"><i class="fa fa-linkedin"></i>LinkedIn</a> </li>
+				<li> <a target="_blank" href="https://twitter.com/SegersIan"><i class="fa fa-twitter"></i>@SegersIan</a> </li>
+				<li> <a target="_blank" href="https://vimeo.com/segersian"><i class="fa fa-vimeo"></i>Vimeo</a> </li>
+				<li> <a target="_blank" href="https://angel.co/segers_ian"><i class="fa fa-angellist"></i>AngelList</a> </li>
+				<li> <i class="fa fa-skype"></i><a target="_blank" href="skype:segers_ian?call">Call</a> or <a target="_blank" href="skype:segers_ian?chat"></i>chat</a></li>
+				<li> <a target="_blank" href="#"><i class="fa fa-download"></i>Download CV</a> </li>
+			</ul>
 		</section>
 
 		<section>
@@ -73,15 +170,15 @@
 
 		<section>
 			<h1>About</h1>
-			<p>I love to see the big picture of a company, the mission, the product and most important of all, the user. In the past years I have been involved in an exciting start-up where I got in touch with many aspects of the development process, varying from coding to operations, continuous integration, continuous improvement, coaching employees, planning and product development. Off shore development and remote teams have no secrets for me, the more international the better.</p>
-			<p>In my spare time I improve my knowledge and skills by seeking the net for blogs, books and discussions so I can apply this knowledge to enable the company to tackle new, constant emerging challenges that the information era imposes on us. Beside that, I like to experiment with music and video editing to satisfy my personal creativity. When the weekend starts I put on my dancing shoes to enjoy some concerts or old school house music from the late 80's else a trip to another county or city is on top of my list.</p>
+			<p class="tab">I love to see the big picture of a company, the mission, the product and most important of all, the user. In the past years I have been involved in an exciting start-up where I got in touch with many aspects of the development process, varying from coding to operations, continuous integration, continuous improvement, coaching employees, planning and product development. Off shore development and remote teams have no secrets for me, the more international the better.</p>
+			<p class="tab">In my spare time I improve my knowledge and skills by seeking the net for blogs, books and discussions so I can apply this knowledge to enable the company to tackle new, constant emerging challenges that the information era imposes on us. Beside that, I like to experiment with music and video editing to satisfy my personal creativity. When the weekend starts I put on my dancing shoes to enjoy some concerts or old school house music from the late 80's else a trip to another county or city is on top of my list.</p>
 		</section>
 
 		<section>
 			<h1>Experience</h1>
 			<h2>Jobs</h2>
 			<ul>
-				<li>Co Founder
+				<li><h3>Co Founder</h3>
 					<ul>
 						<li>Nexpat</li>
 						<li>June 2016 - August 2016</li>
@@ -92,7 +189,7 @@
 					</ul>
 				</li>
 				<li>
-					Head of Development
+					<h3>Head of Development</h3>
 					<ul>
 						<li>SocialCee</li>
 						<li>June 2015 - May 2016 (1 year) </li>
@@ -106,7 +203,7 @@
 					</ul>
 				</li>
 				<li>
-					Team Lead
+					<h3>Team Lead</h3>
 					<ul>
 						<li>SocialCee</li>
 						<li>January 2014 - June 2015 (1 year 6 Months)</li>
@@ -118,7 +215,7 @@
 					</ul>
 				</li>
 				<li>
-					Software Engineer
+					<h3>Software Engineer</h3>
 					<ul>
 						<li>SocialCee</li>
 						<li>August 2012 - December 2013 (1 year 5 months)</li>
@@ -129,7 +226,7 @@
 					</ul>
 				</li>
 				<li>
-					Software Engineer Intern
+					<h3>Software Engineer Intern</h3>
 					<ul>
 						<li>Ness</li>
 						<li>April 2011 - June 2011 (3 months)</li>
@@ -142,7 +239,7 @@
 			</ul>
 			<h2>Small projects</h2>
 			<ul>
-				<li>Warehouse Administration App - Android
+				<li><h3>Warehouse Administration App - Android</h3>
 					<ul>
 						<li>Freelance</li>
 						<li>1 Month (2012)</li>
@@ -151,7 +248,7 @@
 						<li>Technologies: Android (2.3.4) , Java , REST</li>
 					</ul>
 				</li>
-				<li>Integration with NaviTrace
+				<li><h3>Integration with NaviTrace</h3>
 					<ul>
 						<li>Vermetal</li>
 						<li>1 Month (2009)</li>
@@ -167,21 +264,21 @@
 		<section>
 			<h1>Education</h1>
 			<ul>
-				<li>Bachelor in Software Development
+				<li><h3>Bachelor in Software Development</h3>
 					<ul>
 						<li>Karel De Grote Hoge School</li>
 						<li>Antwerp, Belgium</li>
 						<li>2008 - 2011</li>
 					</ul>
 				</li>
-				<li>Student Exchange - Mobile Development
+				<li><h3>Student Exchange - Mobile Development</h3>
 					<ul>
 						<li>Jyväskylän ammattikorkeakoulu - JAMK</li>
 						<li>Jyväskylä, Finland</li>
 						<li>2010</li>
 					</ul>
 				</li>
-				<li>Industrial ICT
+				<li><h3>Industrial ICT</h3>
 					<ul>
 						<li>T.I. Don Bosco</li>
 						<li>Hoboken, Belgium</li>
