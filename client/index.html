@@ -39,29 +39,23 @@
 
 	<body ng-app="myApp" class="resume" onload="draw();">
 
-		<section>
-			<svg id="mySvg" class="svg-volume" height="30px" width="30px" style="background-color: inherit;" data-value="50">
-				<path id="voidMask" fill="none" stroke="rgb(0,0,0)" stroke-linecap="round" />
-				<path id="valueMask" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
-				<path id="valuePointer" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
-			</svg>
-
-			JavaScript
-		</section>
 
 		<script>
 			function draw() {
 				var svgVolumeControls = $(".svg-volume");
 
 				svgVolumeControls.each(function () {
-					var mySvg = $("#mySvg");
+					var mySvg = this;
+
+					console.log(mySvg);
+					$( mySvg ).find( ".voidMask" ).css( "color", "red" );
 
 					var angleOfValueMin = -150;
 					var angleOfValueMax = 150;
 
-					var width = mySvg.width();
-					var height = mySvg.height();
-					var value = mySvg.attr("data-value");
+					var width = $(mySvg).width();
+					var height = $(mySvg).height();
+					var value = $(mySvg).attr("data-value");
 
 					var angleOfValue = (angleOfValueMin) + (value * 3);
 
@@ -72,14 +66,14 @@
 
 					var strokeWidth = width * 0.10;
 
-					document.getElementById("voidMask").setAttribute("d", drawMyArc(centerX, centerY, radiusOuter, angleOfValue, angleOfValueMax));
-					document.getElementById("voidMask").setAttribute("stroke-width",strokeWidth);
+					$(mySvg).find(".voidMask").attr("d", drawMyArc(centerX, centerY, radiusOuter, angleOfValue, angleOfValueMax));
+					$(mySvg).find(".voidMask").attr("stroke-width",strokeWidth);
 
-					document.getElementById("valueMask").setAttribute("d", drawMyArc(centerX, centerY, radiusOuter, angleOfValueMin, angleOfValue));
-					document.getElementById("valueMask").setAttribute("stroke-width",strokeWidth);
+					$(mySvg).find(".valueMask").attr("d", drawMyArc(centerX, centerY, radiusOuter, angleOfValueMin, angleOfValue));
+					$(mySvg).find(".valueMask").attr("stroke-width",strokeWidth);
 
-					document.getElementById("valuePointer").setAttribute("d", drawMyPointer(centerX, centerY, radiusInner, radiusOuter, angleOfValue));
-					document.getElementById("valuePointer").setAttribute("stroke-width",strokeWidth);
+					$(mySvg).find(".valuePointer").attr("d", drawMyPointer(centerX, centerY, radiusInner, radiusOuter, angleOfValue));
+					$(mySvg).find(".valuePointer").attr("stroke-width",strokeWidth);
 
 					});
 				}
@@ -292,13 +286,62 @@
 			<h1>Skills</h1>
 			<h2>Technical</h2>
 			<ul>
-				<li>C#</li>
-				<li>Android</li>
-				<li>JavaScript</li>
-				<li>Angular</li>
-				<li>HTML5/CSS3/SASS</li>
-				<li>MEAN</li>
-				<li>MS SQL</li>
+				<li>
+					<svg class="svg-volume" height="30px" width="30px" style="background-color: inherit;" data-value="10">
+						<path class="voidMask" fill="none" stroke="rgb(0,0,0)" stroke-linecap="round" />
+						<path class="valueMask" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+						<path class="valuePointer" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+					</svg>
+					C#
+				</li>
+				<li>
+					<svg class="svg-volume" height="30px" width="30px" style="background-color: inherit;" data-value="20">
+						<path class="voidMask" fill="none" stroke="rgb(0,0,0)" stroke-linecap="round" />
+						<path class="valueMask" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+						<path class="valuePointer" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+					</svg>
+					Android
+				</li>
+				<li>
+					<svg class="svg-volume" height="30px" width="30px" style="background-color: inherit;" data-value="30">
+						<path class="voidMask" fill="none" stroke="rgb(0,0,0)" stroke-linecap="round" />
+						<path class="valueMask" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+						<path class="valuePointer" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+					</svg>
+					JavaScript
+				</li>
+				<li>
+					<svg class="svg-volume" height="30px" width="30px" style="background-color: inherit;" data-value="40">
+						<path class="voidMask" fill="none" stroke="rgb(0,0,0)" stroke-linecap="round" />
+						<path class="valueMask" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+						<path class="valuePointer" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+					</svg>
+					Angular
+				</li>
+				<li>
+					<svg class="svg-volume" height="30px" width="30px" style="background-color: inherit;" data-value="50">
+						<path class="voidMask" fill="none" stroke="rgb(0,0,0)" stroke-linecap="round" />
+						<path class="valueMask" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+						<path class="valuePointer" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+					</svg>
+					HTML5/CSS3/SASS
+				</li>
+				<li>
+					<svg class="svg-volume" height="30px" width="30px" style="background-color: inherit;" data-value="60">
+						<path class="voidMask" fill="none" stroke="rgb(0,0,0)" stroke-linecap="round" />
+						<path class="valueMask" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+						<path class="valuePointer" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+					</svg>
+					MEAN
+				</li>
+				<li>
+					<svg class="svg-volume" height="30px" width="30px" style="background-color: inherit;" data-value="70">
+						<path class="voidMask" fill="none" stroke="rgb(0,0,0)" stroke-linecap="round" />
+						<path class="valueMask" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+						<path class="valuePointer" fill="none" stroke="rgb(207, 145, 121)" stroke-linecap="round"/>
+					</svg>
+					MS SQL
+				</li>
 			</ul>
 			<h2>Tools</h2>
 			<ul>
