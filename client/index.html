@@ -1,60 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>IanSegers.Com</title>
 
-	<!-- Open Graph -->
-	<meta property="og:title" content="IanSegers.Com" />
-	<meta property="og:locale" content="en_GB" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="www.iansegers.com" />
-	<meta property="og:site_name" content="www.iansegers.com" />
-	<meta property="og:image" content="http://www.iansegers.com/assets/img/profile.jpg" />
-	<meta property="og:description" content="Learn more about Ian Segers, his blogs, his resume and his projects." />
+	<head>
+		<meta charset="UTF-8">
+		<title>IanSegers.Com</title>
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-	<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" >
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" >
-	<link rel="stylesheet" href="assets/css/style.css" >
+		<!-- Open Graph -->
+		<meta property="og:title" content="IanSegers.Com" />
+		<meta property="og:locale" content="en_GB" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="www.iansegers.com" />
+		<meta property="og:site_name" content="www.iansegers.com" />
+		<meta property="og:image" content="http://www.iansegers.com/assets/img/profile.jpg" />
+		<meta property="og:description" content="Learn more about Ian Segers, his blogs, his resume and his projects." />
 
-	<!-- JS -->
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+		<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+		<!--
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" >
+		-->
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/style.css" >
 
-	<script src="bower_components/angular/angular.min.js"></script>
-	<script src="bower_components/angular-route/angular-route.min.js"></script>
+		<!-- JS -->
+		<!--
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		-->
 
-</head>
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/angular-route/angular-route.min.js"></script>
 
-<body ng-app="myApp">
-<div class="container-fluid main-container">
+	</head>
 
-	<div class="row">
-		<div class="col-lg-4 cta-box"> <a href="#creative">Creative</a></div>
-		<div class="col-lg-4 cta-box"> <a href="#social">Social</a></div>
-		<div class="col-lg-4 cta-box"> <a href="#blog">Blog</a></div>
-	</div>
+	<body ng-app="myApp">
 
-	<div class="row">
-		<div class="col-lg-4 cta-box"> <a href="#site">Geeky</a></div>
-		<div class="col-lg-4 cta-box"> <a href="#/"><img src="assets/img/profile.jpg"></a> </div>
-		<div class="col-lg-4 cta-box"> <a href="#projects">My Projects</a></div>
-	</div>
+		<section class="flex-container">
 
-	<div class="row">
-		<div class="col-lg-4 cta-box"> <a href="#resume">Interests</a></div>
-		<div class="col-lg-4 cta-box"> <a href="#about">Who I am</a></div>
-		<div class="col-lg-4 cta-box"> <a href="#contact">Contact</a></div>
-	</div>
+			<div class="profile-image"> </div>
 
-</div>
+			<div class="flex-item json" style="padding: 1em 1em 1em 1em">
+				{<br>
+				<span class="tab"></span><span class="field">"name"</span>: <span class="value-string">"Ian Segers"</span>,<br>
+				<span class="tab"></span><span class="field">"location"</span>: <span class="value-string">"Berlin, Germany"</span>,<br>
+				<span class="tab"></span><span class="field">"nationality"</span>: <span class="value-string">"Belgian"</span>,<br>
+				<span class="tab"></span><span class="field">"contact"</span>: <span class="value-string">"iansegers@gmail.com"</span>,<br>
+				<span class="tab"></span><span class="field">"birthdate"</span>: {<br>
+				<span class="tab"></span><span class="tab"></span><span class="field">"timestamp"</span>: <span class="value-string">579859200</span>,<br>
+				<span class="tab"></span><span class="tab"></span><span class="field">"formatted"</span>: <span class="value-string">"17th of May, 1988"</span>,<br>
+				<span class="tab">}</span><br>
+				}
+			</div>
 
-<div ng-view></div>
+			<div class="flex-item">
+				&lt/FindMeOn&gt <br>
+				<span class="tab"></span> <a target="_blank" href="http://stackoverflow.com/users/713456"><i class="fa fa-stack-overflow"></i>StackOverflow</a> <br>
+				<span class="tab"></span> <a target="_blank" href="https://github.com/SegersIan"><i class="fa fa-github"></i>GitHub</a> <br>
+				<span class="tab"></span> <a target="_blank" href="https://linkedin.com/in/segersian"><i class="fa fa-linkedin"></i>LinkedIn</a> <br>
+				<span class="tab"></span> <a target="_blank" href="https://twitter.com/SegersIan"><i class="fa fa-twitter"></i>@SegersIan</a> <br>
+				<span class="tab"></span> <a target="_blank" href="https://vimeo.com/segersian"><i class="fa fa-vimeo"></i>Vimeo</a> <br>
+				<span class="tab"></span> <a target="_blank" href="https://angel.co/segers_ian"><i class="fa fa-angellist"></i>AngelList</a> <br>
+				<span class="tab"></span> <i class="fa fa-skype"><a target="_blank" href="skype:segers_ian?call"></i>Call</a> or <a target="_blank" href="skype:segers_ian?chat"></i>chat</a><br>
+			</div>
+		</section>
 
-<script src="js/app.js"></script>
+		<section>
+			<h1>Goals</h1>
+			<p>TODO</p>
+		</section>
 
-</body>
+		<section>
+			<h1>About</h1>
+			<p>I love to see the big picture of a company, the mission, the product and most important of all, the user. In the past years I have been involved in an exciting start-up where I got in touch with many aspects of the development process, varying from coding to operations, continuous integration, continuous improvement, coaching employees, planning and product development. Off shore development and remote teams have no secrets for me, the more international the better.</p>
+			<p>In my spare time I improve my knowledge and skills by seeking the net for blogs, books and discussions so I can apply this knowledge to enable the company to tackle new, constant emerging challenges that the information era imposes on us. Beside that, I like to experiment with music and video editing to satisfy my personal creativity. When the weekend starts I put on my dancing shoes to enjoy some concerts or old school house music from the late 80's else a trip to another county or city is on top of my list.</p>
+		</section>
+
+		<section>
+			<h1>Experience</h1>
+			<h2>Jobs</h2>
+			<ul>
+				<li>Co Founder
+					<ul>
+						<li>Nexpat</li>
+						<li>June 2016 - August 2016</li>
+						<li>Gdansk, Poland</li>
+						<li>As a co founder at Nexpat, my role is primarily responsible for leading the development of our platform and technical decisions. Naturally as a co founder and start up I am involved with multiple activities on the business, marketing, management, anything I can help to push the platform and company forward with my past and current experience.</li>
+						<li>Technologies : MongoDB, ExpressJS, NodeJS, Angular2, SASS, TypeScript</li>
+						<li>Bootstrapping a brand, company, coordinate development of the product, collaborate with other co-founders on building the team and our future.</li>
+					</ul>
+				</li>
+				<li>
+					Head of Development
+					<ul>
+						<li>SocialCee</li>
+						<li>June 2015 - May 2016 (1 year) </li>
+						<li>Gdansk, Poland</li>
+						<li>
+							<p>I am responsible for the development of our product (SaaS) located in the offshore office in Poland. This implies daily operational responsibilities like monitoring and adjusting the team set-up, identify responsibilities and recruit where necessary, coach employees, plan the product roadmap and report to other departments about our process on the product. </p>
+							<p>Beside the usual operational tasks I write technical documentation, communicate with external partners and facilitate troubleshooting of our REST API. On the side I get my hand dirty on improving our devops, execute deployments, coordinate releases and make sure the product keeps moving forward. </p>
+							<p>When possible, I try to squeze in on fixing bugs and implementation tasks to not loose touch with our code base.</p>
+						</li>
+						<li>Soft Skills: Writing public documentation, continuous improvement, product planning, scaling planning, management, external communications, coaching and recruitment.</li>
+					</ul>
+				</li>
+				<li>
+					Team Lead
+					<ul>
+						<li>SocialCee</li>
+						<li>January 2014 - June 2015 (1 year 6 Months)</li>
+						<li>Gdansk, Poland</li>
+						<li>Team lead and developer at our offshore team based in Gdansk, Poland.
+							Responsible for the documentation, analysis, implementation, testing and team for the back-end development of our web application. Development according to the KanBan methodology.</li>
+						<li>Technologies: C#, HTML/CSS, JS, Framework 4.5, EF6, GIT, SQL Server 2012 and non tech (confluence + Jira)</li>
+						<li>Soft skills: Team management, writing documentation (SRS, SP and WBS), Leading daily stand ups, KanBan, Agile</li>
+					</ul>
+				</li>
+				<li>
+					Software Engineer
+					<ul>
+						<li>SocialCee</li>
+						<li>August 2012 - December 2013 (1 year 5 months)</li>
+						<li>Oslo, Norway</li>
+						<li>Responsible for the development of the web application tool that provides social media management for numerous social networks. This involves gathering, processing, intellegence and handling content from multiple social network APIs. We also work with partners like Intelecom to integrate social media support in their existing solutions.</li>
+						<li>Technologies: C#, HTML/CSS, JS, REST, Ajax, Social Media API's, Framework 4.5, SQL Server 2012.</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					Software Engineer Intern
+					<ul>
+						<li>Ness</li>
+						<li>April 2011 - June 2011 (3 months)</li>
+						<li>Hyderabad, India</li>
+						<li>Responsible for developing a satellite web application that validated and processed batch (CSV) files that then were executed on the core solution's API. I developed this with the offshore team in India.</li>
+						<li>Technologies: Spring 3 MVC, Websphere 7, SOAP and Oracle</li>
+						<li>Soft skills : offshore development, intercultural communication and teamwork, presenting</li>
+					</ul>
+				</li>
+			</ul>
+			<h2>Small projects</h2>
+			<ul>
+				<li>Warehouse Administration App - Android
+					<ul>
+						<li>Freelance</li>
+						<li>1 Month (2012)</li>
+						<li>Belgium</li>
+						<li>Development of an Android app that is in contact with a server to handle warehouse administration for a Finnish customer.</li>
+						<li>Technologies: Android (2.3.4) , Java , REST</li>
+					</ul>
+				</li>
+				<li>Integration with NaviTrace
+					<ul>
+						<li>Vermetal</li>
+						<li>1 Month (2009)</li>
+						<li>Schelle, Belgium</li>
+						<li>Design & implementation of a dispatch application that dispatches tasks to multiple employees that use the NaviTrace solution to follow up deliver and pickup jobs of truck drivers.</li>
+						<li>Technologies: C#, NaviTrace API</li>
+						<li>Soft skills: Close collaboration with the customer to analyze needs and requirements.</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+
+		<section>
+			<h1>Education</h1>
+			<ul>
+				<li>Bachelor in Software Development
+					<ul>
+						<li>Karel De Grote Hoge School</li>
+						<li>Antwerp, Belgium</li>
+						<li>2008 - 2011</li>
+					</ul>
+				</li>
+				<li>Student Exchange - Mobile Development
+					<ul>
+						<li>Jyväskylän ammattikorkeakoulu - JAMK</li>
+						<li>Jyväskylä, Finland</li>
+						<li>2010</li>
+					</ul>
+				</li>
+				<li>Industrial ICT
+					<ul>
+						<li>T.I. Don Bosco</li>
+						<li>Hoboken, Belgium</li>
+						<li>2000 - 2007</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+
+		<section>
+			<h1>Skills</h1>
+			<h2>Technical</h2>
+			<ul>
+				<li>C#</li>
+				<li>Android</li>
+				<li>JavaScript</li>
+				<li>Angular</li>
+				<li>HTML5/CSS3/SASS</li>
+				<li>MEAN</li>
+				<li>MS SQL</li>
+			</ul>
+			<h2>Tools</h2>
+			<ul>
+				<li>GIT</li>
+				<li>Jenkins</li>
+				<li>Markdown</li>
+				<li>JIRA</li>
+				<li>Confluence</li>
+				<li>JavaScript tools (Gulp, bower, npm)</li>
+			</ul>
+			<h2>Soft</h2>
+			<ul>
+				<li>KanBan</li>
+				<li>LEAN</li>
+				<li>Leadership</li>
+				<li>Technical documentation</li>
+			</ul>
+			<h2>Useful</h2>
+			<ul>
+				<li>Product Development</li>
+				<li>Online Marketing</li>
+				<li>Entrepreneural mindset</li>
+				<li>Cultural Intelligence</li>
+			</ul>
+		</section>
+
+		<section>
+			<h1>Languages</h1>
+			<ul>
+				<li>Dutch (Native proficiency)</li>
+				<li>English (Full professional proficiency)</li>
+				<li>French (Limited working proficiency)</li>
+			</ul>
+		</section>
+
+		<div ng-view></div>
+
+		<script src="js/app.js"></script>
+
+	</body>
 </html>
