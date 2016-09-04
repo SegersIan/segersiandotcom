@@ -1,8 +1,6 @@
 angular.module('myApp')
 	.controller('ResumeController', function($scope) {
 		
-		console.log('resume');
-		
 		initialize();
 		
 		function initialize() {
