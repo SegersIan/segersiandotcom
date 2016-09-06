@@ -1,0 +1,37 @@
+/* Golden Ratio values */
+$goldenRatio : 1.618;
+$baseRatio : 100%;
+$gld10 : $baseRatio / $goldenRatio;
+$gld9 : $baseRatio - $gld10;
+$gld8 : $gld9 / $goldenRatio;
+$gld7 : $gld9 - $gld8;
+$gld6 : $gld7 / $goldenRatio;
+$gld5 : $gld7 - $gld6;
+$gld4 : $gld5 / $goldenRatio;
+$gld3 : $gld5 - $gld4;
+$gld2 : $gld3 / $goldenRatio;
+$gld1 : $gld3 - $gld2;
+
+.gld-full{
+	width: $baseRatio;
+}
+
+.gld-large{
+	width: $gld10;
+}
+
+.gld-xlarge{
+	width: $baseRatio - ($gld7 + $gld7);
+}
+
+.gld-med{
+	width: $gld9;
+}
+
+.gld-small{
+	width: $gld8;
+}
+
+.gld-xsmal{
+	width: $gld7;
+}

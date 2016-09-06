@@ -1,5 +1,6 @@
 angular.module('myApp')
-	.controller('ResumeController', function($scope) {
+	.controller('ResumeController', function($scope, $rootScope) {
+		$rootScope.title = 'resume';
 		
 		initialize();
 		

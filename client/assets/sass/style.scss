@@ -1,3 +1,4 @@
+/* Colors */
 $colorBackground : rgb(30,30,30);
 $colorBrown : rgb(193,107,52);
 $colorGoldBrown : rgb(207, 145, 121);
@@ -8,8 +9,70 @@ $colorText : rgb(212,212,212);
 $colorHighlightRed : rgb(242,31,28);
 $colorCommentGreen : rgb(96, 137, 77);
 
+/* Fonts */
 $fontFamilyTextEditor : "Menlo";
 $fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
+
+@import "golden-ratio";
+@import "headers";
+
+.full-surface{
+	width: 100%;
+	height: 100%;
+}
+
+.border-yellow{
+	border: 1px solid #ffff00;
+}
+
+.profile-image{
+	$size : 12em;
+	display: inline-block;
+	border-radius: 50%;
+	height: $size;
+	width: $size;
+	background: url("../img/profile.jpg") center ;
+	background-size: $size $size;
+}
+
+#content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 100%;
+	color: #fff;
+	transition: all 0.4s, transform 0.4s ease;
+}
+
+.content-innerwrapper{
+	@extend .gld-full;
+	height: 100%;
+}
+
+.content-header{
+	@extend .gld-med;
+	//@extend .border-yellow;
+	text-align: center;
+	height: 100%;
+	overflow: hidden;
+
+}
+
+.content-main{
+	@extend .gld-large;
+	//@extend .border-yellow;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.flex-container{
+	display: flex;
+}
+
+.flex-item{
+	flex-grow: 1;
+}
 
 *{
 	color: $colorText;
@@ -27,10 +90,20 @@ body {
 	background-color: $colorBackground;
 }
 
+a{
+	color: $colorText;
+}
+
 #menu {
 	width: 100%;
 	height: 100%;
 	transition: all 0.4s, transform 0.4s ease;
+
+	.short-key{
+		color: $colorGoldBrown;
+		font-weight: bold;
+	}
+
 }
 
 .panel {
@@ -41,63 +114,28 @@ body {
 	padding: auto 0 auto 0;
 	vertical-align: middle;
 
-	.panel-content{
-		position:absolute;
-		top:50%;
-		height:10em;
-		margin-top:-5em;
-		width: inherit;
-	}
+
 
 	a{
 		text-decoration: none;
 	}
-}
 
-.one {
-	background: #f80;
-}
 
-.two {
-	background: #083;
 }
-
-.three {
-	background: #058;
+.panel-content{
+	position:absolute;
+	top:50%;
+	height:10em;
+	margin-top:-5em;
+	width: inherit;
 }
-
-.four {
-	background: #ff0e87;
-}
-
-.five {
-	background: #8c46b7;
+.panel-main{
+	@extend .panel-content;
+	margin-top: -10em;
 }
 
 .mover {
 	transform: translate(-100%, 0);
-}
-
-#panel2 {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 100%;
-	background: #000;
-	color: #fff;
-	transition: all 0.4s, transform 0.4s ease;
-}
-
-
-
-
-.flex-container{
-	display: flex;
-}
-
-.flex-item{
-	flex-grow: 1;
 }
 
 .tab{
@@ -105,6 +143,20 @@ body {
 }
 
 .resume{
+	padding: 1em 1em 1em 1em;
+
+
+	h1{
+		color: $colorDefaultBlue;
+	}
+
+	h2{
+		color: $colorHighlightBlue;
+	}
+
+	h3{
+		color: $colorGoldBrown;
+	}
 
 	progress {
 		background-color: inherit;
@@ -123,54 +175,8 @@ body {
 		background-color: inherit;
 	}
 
-	h1{
-		color: $colorDefaultBlue;
-	}
-
-	h1, h2, h3{
-		text-transform: lowercase;
-		font-weight: normal;
-	}
-
-	h1:before{
-		content: "{";
-	}
-
-	h1:after{
-		content: "}";
-	}
-
-	h2{
-		@extend .tab;
-	}
-
-	h2:before{
-		content: "{";
-	}
-
-	h2:after{
-		content: "}";
-	}
-
-	h2{
-		color: $colorHighlightBlue;
-	}
-
-	h3{
-		@extend .tab;
-		color: $colorGoldBrown;
-	}
-
 	ul:nth-child(2){
 		@extend .tab;
-	}
-
-	h3:before{
-		content: "{";
-	}
-
-	h3:after{
-		content: "}";
 	}
 
 	ul{

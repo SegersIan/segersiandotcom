@@ -35,103 +35,102 @@
 
 	</head>
 
-	<body ng-app="myApp" ng-controller="AppController">
+	<body ng-app="myApp" ng-controller="AppController" ng-keydown="onKeyPress($event)">
 
 	<div id="menu">
 
 		<div class="panel one">
-				<div class="panel-content" onclick="openContentPanel()">
+				<div class="panel-content" ng-click="goToRoute('/about')">
 			<a href="#/about">
 					<div>
 						<i class="fa fa-question-circle-o fa-5x"></i>
 					</div>
 					<div>
-						<h1>About Me</h1>
+						<h1><span class="short-key">A</span>bout</h1>
 					</div>
 			</a>
 				</div>
 		</div>
 
 		<div class="panel two">
-				<div class="panel-content" onclick="openContentPanel()">
+				<div class="panel-content" ng-click="goToRoute('/resume')">
 			<a href="#/resume">
 					<div>
 						<i class="fa fa-rocket fa-5x"></i>
 					</div>
 					<div>
-						<h1>Resume</h1>
+						<h1><span class="short-key">R</span>esume</h1>
 					</div>
 			</a>
 				</div>
 		</div>
 
 		<div class="panel three">
-			<div class="panel-content">
-				<h1>Pretty face</h1>
+			<div class="panel-main">
+				<span class="profile-image"></span>
+				<h1>Ian Segers</h1>
 			</div>
 		</div>
 
 		<div class="panel four">
-				<div class="panel-content" onclick="openContentPanel()">
+				<div class="panel-content" ng-click="goToRoute('/contact')">
 			<a href="#/social">
 					<div>
 						<i class="fa fa-share-alt fa-5x"></i>
 					</div>
 					<div>
-						<h1>Contact & Social</h1>
+						<h1><span class="short-key">c</span>ontact</h1>
 					</div>
 			</a>
 				</div>
 		</div>
 
 		<div class="panel five">
-			<div class="panel-content" onclick="openContentPanel()">
+			<div class="panel-content" ng-click="goToRoute('/site')">
 				<a href="#/site">
 					<div>
 						<i class="fa fa-code fa-5x"></i>
 					</div>
 					<div>
-						<h1>This Site</h1>
+						<h1><span class="short-key">s</span>ite</h1>
 					</div>
 				</a>
 			</div>
 		</div>
 	</div>
 
-	<div id="panel2">
-		<div onclick="finish()">
-			<div style="text-align: right; width: 100%; font-size: 30px">X</div>
 
+	<div id="content">
 
-			<div ng-view></div>
+		<div class="full-surface">
+
+			<div class="flex-container content-innerwrapper" >
+
+				<section class="flex-item content-header">
+					<div class="panel-main">
+						<span class="profile-image"></span>
+						<h1>{{ title }}</h1>
+					</div>
+				</section>
+
+				<section class="flex-item content-main" >
+
+					<div ng-view class="full-surface"></div>
+
+				</section>
+
+			</div>
+
 		</div>
+
 	</div>
-
-	<!--
-
-	<a href="#/">Home</a>
-	<a href="#/resume">Resume</a>
-
--->
 
 	<script src="js/app.js"></script>
 	<script src="js/controllers/app.controller.js"></script>
 	<script src="js/controllers/resume.controller.js"></script>
-
-	<script>
-		var content = document.getElementById("menu");
-		var panel = document.getElementById("panel2");
-
-		function openContentPanel() {
-			content.classList.add("mover");
-			panel.classList.add("mover");
-		}
-
-		function finish() {
-			content.classList.remove("mover");
-			panel.classList.remove("mover");
-		}
-	</script>
+	<script src="js/controllers/about.controller.js"></script>
+	<script src="js/controllers/socialcontact.controller.js"></script>
+	<script src="js/controllers/site.controller.js"></script>
 
 	</body>
 </html>
