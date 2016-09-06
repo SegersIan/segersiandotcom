@@ -114,10 +114,14 @@ body {
 		overflow-y: scroll;
 	}
 
-	.content-flex-block{
+	.content-header-flex{
 		align-self: center;
 		flex-basis: 100%;
+	}
 
+	.content-content-flex{
+		align-self: stretch;
+		flex-basis: 100%;
 	}
 
 }
