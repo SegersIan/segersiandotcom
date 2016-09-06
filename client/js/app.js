@@ -23,7 +23,14 @@ app.config(function($routeProvider) {
 		.when('/site', {
 			templateUrl : 'templates/site.html',
 			controller : 'ThisSiteController'
-		});
+		})
+		.when('/404', {
+			templateUrl : 'templates/404.html',
+			controller : 'PageNotFoundController'
+		})
+		.otherwise(
+			{ redirectTo: '/404' }
+		);
 	
 });
 

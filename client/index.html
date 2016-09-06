@@ -47,64 +47,56 @@
 
 
 		<div class="panel one">
-				<div class="panel-content" ng-click="goToRoute('/about')">
-			<a href="#/about">
+			<div class="panel-content clickable" ng-click="goToRoute('/about')">
 					<div>
 						<i class="fa fa-question-circle-o fa-5x"></i>
 					</div>
 					<div>
 						<h1><span class="short-key">A</span>bout</h1>
 					</div>
-			</a>
-				</div>
+			</div>
 		</div>
 
 		<div class="panel two">
-				<div class="panel-content" ng-click="goToRoute('/resume')">
-			<a href="#/resume">
-					<div>
-						<i class="fa fa-rocket fa-5x"></i>
-					</div>
-					<div>
-						<h1><span class="short-key">R</span>esume</h1>
-					</div>
-			</a>
+			<div class="panel-content clickable" ng-click="goToRoute('/resume')">
+				<div>
+					<i class="fa fa-rocket fa-5x"></i>
 				</div>
+				<div>
+					<h1><span class="short-key">R</span>esume</h1>
+				</div>
+			</div>
 		</div>
 
 		<div class="panel three">
 			<div class="panel-main">
 				<span class="profile-image"></span>
-				<h1>Ian Segers</h1>
+				<br><br>
+				<span style="font-size: 1.2em; padding: 2em 0 0 0">ian segers<span class="blink_me">_</span></span>
 			</div>
 		</div>
 
 		<div class="panel four">
-				<div class="panel-content" ng-click="goToRoute('/contact')">
-			<a href="#/social">
-					<div>
-						<i class="fa fa-share-alt fa-5x"></i>
-					</div>
-					<div>
-						<h1><span class="short-key">c</span>ontact</h1>
-					</div>
-			</a>
+			<div class="panel-content clickable" ng-click="goToRoute('/contact')">
+				<div>
+					<i class="fa fa-share-alt fa-5x"></i>
 				</div>
-		</div>
-
-		<div class="panel five">
-			<div class="panel-content" ng-click="goToRoute('/site')">
-				<a href="#/site">
-					<div>
-						<i class="fa fa-code fa-5x"></i>
-					</div>
-					<div>
-						<h1><span class="short-key">s</span>ite</h1>
-					</div>
-				</a>
+				<div>
+					<h1><span class="short-key">c</span>ontact</h1>
+				</div>
 			</div>
 		</div>
 
+		<div class="panel five">
+			<div class="panel-content clickable" ng-click="goToRoute('/site')">
+				<div>
+					<i class="fa fa-code fa-5x"></i>
+				</div>
+				<div>
+					<h1><span class="short-key">s</span>ite</h1>
+				</div>
+			</div>
+		</div>
 
 	</div>
 
@@ -119,12 +111,18 @@
 					<div class="panel-main">
 						<span class="profile-image"></span>
 						<h1>{{ title }}</h1>
+						<span>
+							<br><br>
+							<span ng-click="goToRoute('/')" class="clickable"> press `ESC` to return</span>
+						</span>
 					</div>
 				</section>
 
 				<section class="flex-item content-main" >
 
-					<div ng-view class="full-surface"></div>
+					<div ng-click="goToRoute('/')" class="clickable return"><i class="fa fa-chevron-left"></i> <span>return<span class="blink_me">_</span></span></div>
+
+					<div ng-view class="full-surface route-content"></div>
 
 				</section>
 

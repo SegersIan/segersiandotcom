@@ -21,8 +21,28 @@ $fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
 	height: 100%;
 }
 
+.clickable{
+	cursor: pointer;
+}
+
 .border-yellow{
 	border: 1px solid #ffff00;
+}
+
+.route-content{
+	margin: 3em 0 0 0
+}
+
+.return{
+	padding: 1em 1em 0 0;
+	vertical-align: center;
+	height: 2em;
+	right:0;
+	text-align: right;
+	position: fixed;
+	//background-color: $colorBackground;
+	width: inherit;
+	background-color: rgba(30,30,30,0.9);
 }
 
 .profile-image{
@@ -206,7 +226,7 @@ a{
 		}
 
 		.comment{
-			color: $colorCommentGreen;
+			color: $colorCommentGreen !important;
 		}
 
 		.value-string{
@@ -215,4 +235,37 @@ a{
 	}
 }
 
+.blink_me {
+	-webkit-animation-name: blinker;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
 
+	-moz-animation-name: blinker;
+	-moz-animation-duration: 2s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+
+	animation-name: blinker;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+
+@keyframes blinker {
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}

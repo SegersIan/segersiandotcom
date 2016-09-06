@@ -1,4 +1,4 @@
 angular.module('myApp')
-	.controller('AboutController', function($scope, $rootScope) {
+	.controller('AboutController', function($rootScope) {
 		$rootScope.title = 'about me';
 	});

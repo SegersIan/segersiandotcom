@@ -50,11 +50,13 @@ angular.module('myApp')
 		function openContent() {
 			$('#menu').addClass('mover');
 			$('#content').addClass('mover');
+			$('.return').css('display','block');
 		}
 		
 		function openMenu() {
 			$('#menu').removeClass('mover');
 			$('#content').removeClass('mover');
+			$('.return').css('display','none');
 		}
 		
 	});
