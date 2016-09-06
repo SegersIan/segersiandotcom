@@ -1,6 +1,6 @@
 /* Golden Ratio values */
 $goldenRatio : 1.618;
-$baseRatio : 100%;
+$baseRatio : 99%;
 $gld10 : $baseRatio / $goldenRatio;
 $gld9 : $baseRatio - $gld10;
 $gld8 : $gld9 / $goldenRatio;

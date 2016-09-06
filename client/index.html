@@ -33,103 +33,97 @@
 
 			<div class="flex-container">
 
-			<div class="flex-subcontainer">
-				<div class="menu-panel clickable" ng-click="goToRoute('/about')">
-					<div class="menu-panel-content">
-						<div>
-							<i class="fa fa-question-circle-o fa-5x"></i>
+				<div class="flex-subcontainer">
+					<div class="menu-panel clickable" ng-click="goToRoute('/about')">
+						<div class="menu-panel-content">
+							<div>
+								<i class="fa fa-question-circle-o fa-5x"></i>
+							</div>
+							<div>
+								<h1><span class="short-key">A</span>bout</h1>
+							</div>
 						</div>
-						<div>
-							<h1><span class="short-key">A</span>bout</h1>
+					</div>
+					<div class="menu-panel clickable" ng-click="goToRoute('/resume')">
+						<div class="menu-panel-content">
+							<div>
+								<i class="fa fa-rocket fa-5x"></i>
+							</div>
+							<div>
+								<h1><span class="short-key">R</span>esume</h1>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="menu-panel clickable" ng-click="goToRoute('/resume')">
-					<div class="menu-panel-content">
-						<div>
-							<i class="fa fa-rocket fa-5x"></i>
-						</div>
-						<div>
-							<h1><span class="short-key">R</span>esume</h1>
-						</div>
-					</div>
-				</div>
-			</div>
 
-			<div class="flex-subcontainer">
-				<div class="menu-panel flex-single-column">
-					<div class="menu-panel-content">
-						<span class="profile-image"></span>
-						<br><br>
-						<span style="font-size: 1.2em">
-							ian segers<span class="blink">_</span>
-						</span>
-						<br>
-						<br>
-						<span class="instructions">
-							This website is keyboard friendly, press <span class="short-key">a, r, c</span> or <span class="short-key">s</span> to navigate.
-						</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="flex-subcontainer" >
-				<div class="menu-panel clickable" ng-click="goToRoute('/contact')">
-					<div class="menu-panel-content">
-						<div>
-							<i class="fa fa-share-alt fa-5x"></i>
-						</div>
-						<div>
-							<h1><span class="short-key">c</span>ontact</h1>
-						</div>
-					</div>
-				</div>
-				<div class="menu-panel clickable" ng-click="goToRoute('/site')">
-					<div class="menu-panel-content">
-						<div>
-							<i class="fa fa-code fa-5x"></i>
-						</div>
-						<div>
-							<h1><span class="short-key">s</span>ite</h1>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-		</div>
-
-
-		<div id="content">
-
-			<div class="full-surface">
-
-				<div class="flex-container content-innerwrapper" >
-
-					<section class="flex-item content-header">
-						<div class="panel-main">
+				<div class="flex-subcontainer">
+					<div class="menu-panel flex-single-column">
+						<div class="menu-panel-content">
 							<span class="profile-image"></span>
-							<h1>{{ title }}</h1>
-							<span>
-								<br><br>
-								<span ng-click="goToRoute('/')" class="clickable"> press `ESC` to return</span>
+							<br><br>
+							<span style="font-size: 1.2em">
+								ian segers<span class="blink">_</span>
+							</span>
+							<br>
+							<br>
+							<span class="instructions">
+								This website is keyboard friendly, press <span class="short-key">a, r, c</span> or <span class="short-key">s</span> to navigate.
 							</span>
 						</div>
-					</section>
+					</div>
+				</div>
 
-					<section class="flex-item content-main" >
-
-						<div ng-click="goToRoute('/')" class="clickable return"><i class="fa fa-chevron-left"></i> <span>return<span class="blink">_</span></span></div>
-
-						<div ng-view class="full-surface route-content"></div>
-
-					</section>
-
+				<div class="flex-subcontainer" >
+					<div class="menu-panel clickable" ng-click="goToRoute('/contact')">
+						<div class="menu-panel-content">
+							<div>
+								<i class="fa fa-share-alt fa-5x"></i>
+							</div>
+							<div>
+								<h1><span class="short-key">c</span>ontact</h1>
+							</div>
+						</div>
+					</div>
+					<div class="menu-panel clickable" ng-click="goToRoute('/site')">
+						<div class="menu-panel-content">
+							<div>
+								<i class="fa fa-code fa-5x"></i>
+							</div>
+							<div>
+								<h1><span class="short-key">s</span>ite</h1>
+							</div>
+						</div>
+					</div>
 				</div>
 
 			</div>
 
+		</div>
+
+		<div id="content">
+			<div class="flex-container gld-full">
+
+				<div class="content-header">
+
+					<div class="flex-block">
+						<span class="profile-image"></span>
+						<h1>{{ title }}</h1>
+						<span>
+							<br>
+							<div ng-click="goToRoute('/')" class="clickable" ><span class="blink"><i class="fa fa-chevron-left"></i></span> <span>back  (<span class="short-key">esc</span>)</span></div>
+						</span>
+					</div>
+
+				</div>
+
+				<div class="content-main">
+
+					<div class="flex-block" style="align-self: stretch !important;">
+						<div ng-view></div>
+					</div>
+
+				</div>
+			</div>
 		</div>
 
 		<script src="js/app.js"></script>

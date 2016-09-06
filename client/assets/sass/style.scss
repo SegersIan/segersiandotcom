@@ -54,11 +54,30 @@ body {
 	margin-left: 2em;
 }
 
+.short-key{
+	color: $colorGoldBrown;
+	font-weight: bold;
+}
+
+.profile-image{
+	$size : 12em;
+	display: inline-block;
+	border-radius: 50%;
+	height: $size;
+	width: $size;
+	background: url("../img/profile.jpg") center ;
+	background-size: $size $size;
+}
+
+/* Classes for transition effect */
+.mover {
+	transform: translate(-100%, 0);
+}
+
 /* Main menu */
 #menu {
-	width: 100%;
-	height: 100%;
 	transition: all 0.4s, transform 0.4s ease;
+	height: 100%;
 
 	.menu-panel{
 		text-align: center;
@@ -72,67 +91,36 @@ body {
 	}
 }
 
-.mover {
-	transform: translate(-100%, 0);
-}
-
-.short-key{
-	color: $colorGoldBrown;
-	font-weight: bold;
-}
-
-.route-content{
-	margin: 3em 0 0 0
-}
-
-.return{
-	padding: 1em 1em 0 0;
-	vertical-align: center;
-	height: 2em;
-	right:0;
-	text-align: right;
-	position: fixed;
-	width: inherit;
-	background-color: rgba(30,30,30,0.9);
-}
-
-.profile-image{
-	$size : 12em;
-	display: inline-block;
-	border-radius: 50%;
-	height: $size;
-	width: $size;
-	background: url("../img/profile.jpg") center ;
-	background-size: $size $size;
-}
+/* Content container */
 
 #content {
 	position: absolute;
+	left: 100%;
+	transition: all 0.4s, transform 0.4s ease;
 	width: 100%;
 	height: 100%;
 	top: 0;
-	left: 100%;
-	color: #fff;
-	transition: all 0.4s, transform 0.4s ease;
-}
 
-.content-innerwrapper{
-	@extend .gld-full;
-	height: 100%;
-}
+	.content-header{
+		width: $gld9;
+		border: 1px solid #00b3ee;
+		overflow: hidden;
+		display: flex;
+	}
 
-.content-header{
-	@extend .gld-med;
-	text-align: center;
-	height: 100%;
-	overflow: hidden;
+	.content-main{
+		width: $gld10;
+		border: 1px solid #00b3ee;
+		display: flex;
+		overflow-y: scroll;
+	}
 
-}
+	.flex-block{
+		align-self: center;
+		flex-basis: 100%;
+		text-align: center;
+	}
 
-.content-main{
-	@extend .gld-large;
-	height: 100%;
-	overflow-y: scroll;
 }
 
 .resume{
