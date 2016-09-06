@@ -1,5 +1,5 @@
 angular.module('myApp')
-	.controller('AppController', function($scope, $location) {
+	.controller('AppController', function($scope, $location, $timeout) {
 				
 		$scope.onKeyPress = onKeyPress;
 		$scope.goToRoute = goToRoute;
@@ -32,12 +32,15 @@ angular.module('myApp')
 		
 		function goToRoute(route) {
 			
-			openMenu();
-			$location.path(route);
-			
 			if(route === '/'){
 				openMenu();
-				$location.path(route);
+				
+				// Delay for visual effects > Consider to use a directive or template
+				$timeout(
+					function () {
+						$location.path(route);
+					}, 400, false
+				);
 			}else{
 				openContent();
 				$location.path(route);
