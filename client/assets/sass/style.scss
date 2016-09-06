@@ -103,47 +103,43 @@ body {
 
 	.content-header{
 		width: $gld9;
-		border: 1px solid #00b3ee;
 		overflow: hidden;
 		display: flex;
+		text-align: center;
 	}
 
 	.content-main{
 		width: $gld10;
-		border: 1px solid #00b3ee;
 		display: flex;
 		overflow-y: scroll;
 	}
 
-	.flex-block{
+	.content-flex-block{
 		align-self: center;
 		flex-basis: 100%;
-		text-align: center;
+
 	}
 
 }
 
 @media all and (max-width: 1200px){
 
-	.flex-container{
-		//flex-direction: column;
-		//background-color: #3c763d !important;
+	.content-flex-container{
+		display: block;
+		width: 100%;
+		overflow-y: scroll;
 	}
 
 	.content-header{
-		//flex-basis: 100%;
-		//align-self: flex-start;
+		width: 100% !important;
+		background-color: rgba(30,30,30,0.9);
+		position: fixed;
+		height: 20em;
 	}
 
 	.content-main{
-		//flex-basis: 100%;
-		//flex-direction: column;
-	}
-
-	.flex-block{
-		//flex-basis: 100%;
-		//flex-direction: column;
-
+		width: 100% !important;
+		margin: 20em 0 0 0;
 	}
 
 }
