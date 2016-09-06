@@ -123,6 +123,31 @@ body {
 
 }
 
+@media all and (max-width: 1200px){
+
+	.flex-container{
+		//flex-direction: column;
+		//background-color: #3c763d !important;
+	}
+
+	.content-header{
+		//flex-basis: 100%;
+		//align-self: flex-start;
+	}
+
+	.content-main{
+		//flex-basis: 100%;
+		//flex-direction: column;
+	}
+
+	.flex-block{
+		//flex-basis: 100%;
+		//flex-direction: column;
+
+	}
+
+}
+
 .resume{
 	padding: 1em 1em 1em 1em;
 
