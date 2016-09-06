@@ -29,113 +29,119 @@
 
 	<body ng-app="myApp" ng-controller="AppController" ng-keydown="onKeyPress($event)">
 
-	<div id="menu">
+		<div id="menu">
 
+			<div class="flex-container">
 
-
-
-		<!--
-		<span class="instructions">
-			This website is keyboard friendly. <br>
-			Press any key with <span class="short-key">corresponding</span> letter.<br>
-			Use `ESC` to return.
-		</span>
-
-		<div class="panel one">
-			<div class="panel-content clickable" ng-click="goToRoute('/about')">
-					<div>
-						<i class="fa fa-question-circle-o fa-5x"></i>
+			<div class="flex-subcontainer">
+				<div class="menu-panel clickable" ng-click="goToRoute('/about')">
+					<div class="menu-panel-content">
+						<div>
+							<i class="fa fa-question-circle-o fa-5x"></i>
+						</div>
+						<div>
+							<h1><span class="short-key">A</span>bout</h1>
+						</div>
 					</div>
-					<div>
-						<h1><span class="short-key">A</span>bout</h1>
+				</div>
+				<div class="menu-panel clickable" ng-click="goToRoute('/resume')">
+					<div class="menu-panel-content">
+						<div>
+							<i class="fa fa-rocket fa-5x"></i>
+						</div>
+						<div>
+							<h1><span class="short-key">R</span>esume</h1>
+						</div>
 					</div>
-			</div>
-		</div>
-
-		<div class="panel two">
-			<div class="panel-content clickable" ng-click="goToRoute('/resume')">
-				<div>
-					<i class="fa fa-rocket fa-5x"></i>
-				</div>
-				<div>
-					<h1><span class="short-key">R</span>esume</h1>
 				</div>
 			</div>
-		</div>
 
-		<div class="panel three">
-			<div class="panel-main">
-				<span class="profile-image"></span>
-				<br><br>
-				<span style="font-size: 1.2em; padding: 2em 0 0 0">ian segers<span class="blink_me">_</span></span>
-			</div>
-		</div>
-
-		<div class="panel four">
-			<div class="panel-content clickable" ng-click="goToRoute('/contact')">
-				<div>
-					<i class="fa fa-share-alt fa-5x"></i>
-				</div>
-				<div>
-					<h1><span class="short-key">c</span>ontact</h1>
-				</div>
-			</div>
-		</div>
-
-		<div class="panel five">
-			<div class="panel-content clickable" ng-click="goToRoute('/site')">
-				<div>
-					<i class="fa fa-code fa-5x"></i>
-				</div>
-				<div>
-					<h1><span class="short-key">s</span>ite</h1>
-				</div>
-			</div>
-		</div>
-		-->
-	</div>
-
-
-	<div id="content">
-
-		<div class="full-surface">
-
-			<div class="flex-container content-innerwrapper" >
-
-				<section class="flex-item content-header">
-					<div class="panel-main">
+			<div class="flex-subcontainer">
+				<div class="menu-panel flex-single-column">
+					<div class="menu-panel-content">
 						<span class="profile-image"></span>
-						<h1>{{ title }}</h1>
-						<span>
-							<br><br>
-							<span ng-click="goToRoute('/')" class="clickable"> press `ESC` to return</span>
+						<br><br>
+						<span style="font-size: 1.2em">
+							ian segers<span class="blink">_</span>
+						</span>
+						<br>
+						<br>
+						<span class="instructions">
+							This website is keyboard friendly, press <span class="short-key">a, r, c</span> or <span class="short-key">s</span> to navigate.
 						</span>
 					</div>
-				</section>
+				</div>
+			</div>
 
-				<section class="flex-item content-main" >
+			<div class="flex-subcontainer" >
+				<div class="menu-panel clickable" ng-click="goToRoute('/contact')">
+					<div class="menu-panel-content">
+						<div>
+							<i class="fa fa-share-alt fa-5x"></i>
+						</div>
+						<div>
+							<h1><span class="short-key">c</span>ontact</h1>
+						</div>
+					</div>
+				</div>
+				<div class="menu-panel clickable" ng-click="goToRoute('/site')">
+					<div class="menu-panel-content">
+						<div>
+							<i class="fa fa-code fa-5x"></i>
+						</div>
+						<div>
+							<h1><span class="short-key">s</span>ite</h1>
+						</div>
+					</div>
+				</div>
+			</div>
 
-					<div ng-click="goToRoute('/')" class="clickable return"><i class="fa fa-chevron-left"></i> <span>return<span class="blink_me">_</span></span></div>
+		</div>
 
-					<div ng-view class="full-surface route-content"></div>
+		</div>
 
-				</section>
+
+		<div id="content">
+
+			<div class="full-surface">
+
+				<div class="flex-container content-innerwrapper" >
+
+					<section class="flex-item content-header">
+						<div class="panel-main">
+							<span class="profile-image"></span>
+							<h1>{{ title }}</h1>
+							<span>
+								<br><br>
+								<span ng-click="goToRoute('/')" class="clickable"> press `ESC` to return</span>
+							</span>
+						</div>
+					</section>
+
+					<section class="flex-item content-main" >
+
+						<div ng-click="goToRoute('/')" class="clickable return"><i class="fa fa-chevron-left"></i> <span>return<span class="blink">_</span></span></div>
+
+						<div ng-view class="full-surface route-content"></div>
+
+					</section>
+
+				</div>
 
 			</div>
 
 		</div>
 
-	</div>
+		<script src="js/app.js"></script>
+		<script src="js/controllers/app.controller.js"></script>
+		<script src="js/controllers/resume.controller.js"></script>
+		<script src="js/controllers/about.controller.js"></script>
+		<script src="js/controllers/socialcontact.controller.js"></script>
+		<script src="js/controllers/site.controller.js"></script>
 
-	<script src="js/app.js"></script>
-	<script src="js/controllers/app.controller.js"></script>
-	<script src="js/controllers/resume.controller.js"></script>
-	<script src="js/controllers/about.controller.js"></script>
-	<script src="js/controllers/socialcontact.controller.js"></script>
-	<script src="js/controllers/site.controller.js"></script>
-
-	<!-- TODO : Add Google Analytics -->
-	<!-- TODO : Add Facebook Pixel -->
+		<!-- TODO : Add Google Analytics -->
+		<!-- TODO : Add Facebook Pixel -->
 
 	</body>
+
 </html>

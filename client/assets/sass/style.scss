@@ -13,10 +13,30 @@ $colorCommentGreen : rgb(96, 137, 77);
 $fontFamilyTextEditor : "Menlo";
 $fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
 
+/* Imports */
 @import "golden-ratio";
 @import "headers";
 @import "responsiveness";
+@import "blink";
 
+/* Default HTML elements */
+*{
+	color: $colorText;
+	font-family: $fontFamilyTextEditor;
+	font-size: 1em;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	overflow-x: hidden;
+	background-color: $colorBackground;
+}
+
+/* Generic */
 .full-surface{
 	width: 100%;
 	height: 100%;
@@ -30,6 +50,37 @@ $fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
 	border: 1px solid #ffff00;
 }
 
+.tab{
+	margin-left: 2em;
+}
+
+/* Main menu */
+#menu {
+	width: 100%;
+	height: 100%;
+	transition: all 0.4s, transform 0.4s ease;
+
+	.menu-panel{
+		text-align: center;
+		width: 50%;
+		display: flex;
+	}
+
+	.menu-panel-content{
+		align-self: center;
+		flex-basis: 100%;
+	}
+}
+
+.mover {
+	transform: translate(-100%, 0);
+}
+
+.short-key{
+	color: $colorGoldBrown;
+	font-weight: bold;
+}
+
 .route-content{
 	margin: 3em 0 0 0
 }
@@ -41,7 +92,6 @@ $fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
 	right:0;
 	text-align: right;
 	position: fixed;
-	//background-color: $colorBackground;
 	width: inherit;
 	background-color: rgba(30,30,30,0.9);
 }
@@ -81,91 +131,21 @@ $fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
 
 .content-main{
 	@extend .gld-large;
-	//@extend .border-yellow;
 	height: 100%;
 	overflow-y: scroll;
 }
 
-*{
-	color: $colorText;
-	font-family: $fontFamilyTextEditor;
-	font-size: 1em;
-}
-
-html,
-body {
-	width: 100%;
-	height: 100%;
-	padding: 0;
-	margin: 0;
-	overflow-x: hidden;
-	background-color: $colorBackground;
-}
-
-a{
-	color: $colorText;
-}
-
 .instructions{
-	z-index: 500;
-	position: absolute;
-	top: 75%;
-	margin: 0 30% 0 30%;
-	width: auto;
-	text-align: center;
-}
-
-#menu {
-	width: 100%;
-	height: 100%;
-	transition: all 0.4s, transform 0.4s ease;
-
-	.short-key{
-		color: $colorGoldBrown;
-		font-weight: bold;
-	}
-
-}
-
-.panel {
-	width: 20%;
-	height: 100%;
-	float: left;
-	text-align: center;
-	padding: auto 0 auto 0;
-	vertical-align: middle;
-
-
-
-	a{
-		text-decoration: none;
-	}
-
-
-}
-.panel-content{
-	position:absolute;
-	top:50%;
-	height:10em;
-	margin-top:-5em;
-	width: inherit;
-}
-.panel-main{
-	@extend .panel-content;
-	margin-top: -10em;
-}
-
-.mover {
-	transform: translate(-100%, 0);
-}
-
-.tab{
-	margin-left: 2em;
+	//z-index: 500;
+	//position: absolute;
+	//top: 75%;
+	//margin: 0 30% 0 30%;
+	//width: auto;
+	//text-align: center;
 }
 
 .resume{
 	padding: 1em 1em 1em 1em;
-
 
 	h1{
 		color: $colorDefaultBlue;
@@ -204,13 +184,6 @@ a{
 		list-style-type: none;
 	}
 
-	.profile-image{
-		height: 16em;
-		width: 16em;
-		background: url("../img/profile.jpg") center ;
-		background-size: 16em 16em;
-	}
-
 	.json{
 		text-align: left;
 
@@ -226,39 +199,4 @@ a{
 			color: $colorGoldBrown
 		}
 	}
-}
-
-.blink_me {
-	-webkit-animation-name: blinker;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
-
-	-moz-animation-name: blinker;
-	-moz-animation-duration: 2s;
-	-moz-animation-timing-function: linear;
-	-moz-animation-iteration-count: infinite;
-
-	animation-name: blinker;
-	animation-duration: 2s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-}
-
-@-moz-keyframes blinker {
-	0% { opacity: 1.0; }
-	50% { opacity: 0.0; }
-	100% { opacity: 1.0; }
-}
-
-@-webkit-keyframes blinker {
-	0% { opacity: 1.0; }
-	50% { opacity: 0.0; }
-	100% { opacity: 1.0; }
-}
-
-@keyframes blinker {
-	0% { opacity: 1.0; }
-	50% { opacity: 0.0; }
-	100% { opacity: 1.0; }
 }
