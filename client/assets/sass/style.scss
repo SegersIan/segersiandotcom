@@ -15,6 +15,7 @@ $fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
 
 @import "golden-ratio";
 @import "headers";
+@import "responsiveness";
 
 .full-surface{
 	width: 100%;
@@ -83,14 +84,6 @@ $fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
 	//@extend .border-yellow;
 	height: 100%;
 	overflow-y: scroll;
-}
-
-.flex-container{
-	display: flex;
-}
-
-.flex-item{
-	flex-grow: 1;
 }
 
 *{
