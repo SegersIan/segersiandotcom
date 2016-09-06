@@ -7,7 +7,7 @@ var browserSync = require('browser-sync').create();
 	Main build tasks
  *******************************/
 gulp.task('watch', ['serve', 'watch:sass', 'watch:html', 'watch:js']);
-gulp.task('publish', ['clean', 'sass-publish']);
+gulp.task('publish', ['clean', 'sass-publish', 'copy']);
 
 /*******************************
 	Development build tasks
@@ -70,25 +70,24 @@ var paths = {
 
 // Delete the dist directory
 gulp.task('clean', function() {
+	/*
 	return gulp.src(outputPaths.app)
 		.pipe(clean());
+		*/
 });
 
 gulp.task('copy', ['clean'], function() {
 	// Copy html
-	gulp.src(paths.html, {cwd: outputPaths.app})
-		.pipe(gulp.dest(bases.dist));
 	
+	gulp.src(paths.html).pipe(gulp.dest('output'));
+	
+	/*
 	// Copy styles
 	gulp.src(paths.styles, {cwd: outputPaths.app})
-		.pipe(gulp.dest(bases.dist + 'styles'));
+		.pipe(gulp.dest(outputPaths.dist + 'styles'));
 	
 	// Copy lib scripts, maintaining the original directory structure
 	gulp.src(paths.libs, {cwd: 'app/**'})
 		.pipe(gulp.dest(outputPaths.dist));
-	
-});
-
-gulp.task('publish-output', function() {
-	console.log('publish-output not implemented');
+	*/
 });
