@@ -9,7 +9,6 @@ angular.module('myApp')
 			switch (event.keyCode){
 				case 27 : { // ESC
 					goToRoute('/');
-					//finish();
 				}break;
 				case 65 : { // A
 					goToRoute('/about');
@@ -31,7 +30,6 @@ angular.module('myApp')
 		}
 		
 		function goToRoute(route) {
-			
 			if(route === '/'){
 				openMenu();
 				
@@ -39,7 +37,7 @@ angular.module('myApp')
 				$timeout(
 					function () {
 						$location.path(route);
-					}, 400, false
+					}, 400, true
 				);
 			}else{
 				openContent();
@@ -50,13 +48,11 @@ angular.module('myApp')
 		function openContent() {
 			$('#menu').addClass('mover');
 			$('#content').addClass('mover');
-			$('.return').css('display','block');
 		}
 		
 		function openMenu() {
 			$('#menu').removeClass('mover');
 			$('#content').removeClass('mover');
-			$('.return').css('display','none');
 		}
 		
 	});

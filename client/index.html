@@ -24,107 +24,113 @@
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="bower_components/angular-route/angular-route.min.js"></script>
+		<script src="libraries/p5.min.js"></script>
+		<script src="js/sketch.js"></script>
 
 	</head>
 
 	<body ng-app="myApp" ng-controller="AppController" ng-keydown="onKeyPress($event)">
 
-		<div id="menu">
+		<div id="root">
 
-			<div class="menu-flex-container">
+			<div id="menu">
 
-				<div class="menu-flex-subcontainer">
-					<div class="menu-panel clickable" ng-click="goToRoute('/about')">
-						<div class="menu-panel-content">
-							<div>
-								<i class="fa fa-question-circle-o fa-5x"></i>
+				<div class="menu-flex-container">
+
+					<div class="menu-flex-subcontainer">
+						<div class="menu-panel clickable" ng-click="goToRoute('/about')">
+							<div class="menu-panel-content">
+								<div>
+									<i class="fa fa-question-circle-o fa-5x"></i>
+								</div>
+								<div>
+									<h1><span class="short-key">A</span>bout</h1>
+								</div>
 							</div>
-							<div>
-								<h1><span class="short-key">A</span>bout</h1>
+						</div>
+						<div class="menu-panel clickable" ng-click="goToRoute('/resume')">
+							<div class="menu-panel-content">
+								<div>
+									<i class="fa fa-rocket fa-5x"></i>
+								</div>
+								<div>
+									<h1><span class="short-key">R</span>esume</h1>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="menu-panel clickable" ng-click="goToRoute('/resume')">
-						<div class="menu-panel-content">
-							<div>
-								<i class="fa fa-rocket fa-5x"></i>
-							</div>
-							<div>
-								<h1><span class="short-key">R</span>esume</h1>
+
+					<div class="menu-flex-subcontainer">
+						<div class="menu-panel menu-flex-single-column">
+							<div class="menu-panel-content">
+								<span class="profile-image"></span>
+								<br><br>
+								<span style="font-size: 1.2em">
+									ian segers<span class="blink">_</span>
+								</span>
+								<br>
+								<br>
+								<span class="instructions">
+									This website is keyboard friendly, press <span class="short-key">a, r, c</span> or <span class="short-key">s</span> to navigate.
+								</span>
 							</div>
 						</div>
 					</div>
+
+					<div class="menu-flex-subcontainer" >
+						<div class="menu-panel clickable" ng-click="goToRoute('/contact')">
+							<div class="menu-panel-content">
+								<div>
+									<i class="fa fa-share-alt fa-5x"></i>
+								</div>
+								<div>
+									<h1><span class="short-key">c</span>ontact</h1>
+								</div>
+							</div>
+						</div>
+						<div class="menu-panel clickable" ng-click="goToRoute('/site')">
+							<div class="menu-panel-content">
+								<div>
+									<i class="fa fa-code fa-5x"></i>
+								</div>
+								<div>
+									<h1><span class="short-key">s</span>ite</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+
 				</div>
 
-				<div class="menu-flex-subcontainer">
-					<div class="menu-panel menu-flex-single-column">
-						<div class="menu-panel-content">
+			</div>
+
+			<div id="content">
+				<div class="content-flex-container gld-full">
+
+					<div class="content-header">
+
+						<div class="content-header-flex">
 							<span class="profile-image"></span>
-							<br><br>
-							<span style="font-size: 1.2em">
-								ian segers<span class="blink">_</span>
-							</span>
-							<br>
-							<br>
-							<span class="instructions">
-								This website is keyboard friendly, press <span class="short-key">a, r, c</span> or <span class="short-key">s</span> to navigate.
+							<h1>{{ title }}</h1>
+							<span>
+								<br>
+								<div ng-click="goToRoute('/')" class="clickable" ><span class="blink"><i class="fa fa-chevron-left"></i></span> <span>back  (<span class="short-key">esc</span>)</span></div>
 							</span>
 						</div>
-					</div>
-				</div>
 
-				<div class="menu-flex-subcontainer" >
-					<div class="menu-panel clickable" ng-click="goToRoute('/contact')">
-						<div class="menu-panel-content">
-							<div>
-								<i class="fa fa-share-alt fa-5x"></i>
-							</div>
-							<div>
-								<h1><span class="short-key">c</span>ontact</h1>
-							</div>
-						</div>
 					</div>
-					<div class="menu-panel clickable" ng-click="goToRoute('/site')">
-						<div class="menu-panel-content">
-							<div>
-								<i class="fa fa-code fa-5x"></i>
-							</div>
-							<div>
-								<h1><span class="short-key">s</span>ite</h1>
-							</div>
-						</div>
-					</div>
-				</div>
 
+					<div class="content-main">
+
+						<div class="content-main-flex">
+							<div ng-view></div>
+						</div>
+
+					</div>
+
+				</div>
 			</div>
 
-		</div>
-
-		<div id="content">
-			<div class="content-flex-container gld-full">
-
-				<div class="content-header">
-
-					<div class="content-header-flex">
-						<span class="profile-image"></span>
-						<h1>{{ title }}</h1>
-						<span>
-							<br>
-							<div ng-click="goToRoute('/')" class="clickable" ><span class="blink"><i class="fa fa-chevron-left"></i></span> <span>back  (<span class="short-key">esc</span>)</span></div>
-						</span>
-					</div>
-
-				</div>
-
-				<div class="content-main">
-
-					<div class="content-main-flex">
-						<div ng-view></div>
-					</div>
-
-				</div>
-
-			</div>
 		</div>
 
 		<script src="js/app.js"></script>
@@ -134,6 +140,11 @@
 		<script src="js/controllers/socialcontact.controller.js"></script>
 		<script src="js/controllers/site.controller.js"></script>
 
+		<script>
+			$('.content-main').scroll(function() {
+				console.log('hello there');
+			});
+		</script>
 		<!-- TODO : Add Google Analytics -->
 		<!-- TODO : Add Facebook Pixel -->
 

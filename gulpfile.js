@@ -5,13 +5,13 @@ var browserSync = require('browser-sync').create();
 /*******************************
 	Main build tasks
  *******************************/
-gulp.task('watch', ['serve', 'watch:sass', 'watch:html']);
+gulp.task('watch', ['serve', 'watch:sass', 'watch:html', 'watch:js']);
 gulp.task('publish', ['sass-publish']);
 
 /*******************************
 	Development build tasks
  *******************************/
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['sass-watch'], function() {
 	browserSync.init({
 		server: "./client"
 	});
@@ -23,6 +23,10 @@ gulp.task('watch:sass', function () {
 
 gulp.task('watch:html', function () {
 	gulp.watch("client/**/*.html").on('change', browserSync.reload);
+});
+
+gulp.task('watch:js', function () {
+	gulp.watch("client/**/*.js").on('change', browserSync.reload);
 });
 
 gulp.task('sass-watch', function() {

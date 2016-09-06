@@ -26,6 +26,16 @@ $fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
 	font-size: 1em;
 }
 
+
+#root {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
 html,
 body {
 	width: 100%;
@@ -34,6 +44,11 @@ body {
 	margin: 0 0 0 0;
 	overflow-x: hidden;
 	background-color: $colorBackground;
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 /* Generic */
@@ -69,6 +84,16 @@ body {
 	background-size: $size $size;
 }
 
+.profile-image:hover{
+	$size : 12em;
+	display: inline-block;
+	border-radius: 50%;
+	height: $size;
+	width: $size;
+	background: url("../img/profile_alt.jpg") center ;
+	background-size: $size $size;
+}
+
 /* Classes for transition effect */
 .mover {
 	transform: translate(-100%, 0);
@@ -78,6 +103,7 @@ body {
 #menu {
 	transition: all 0.4s, transform 0.4s ease;
 	height: 100%;
+	background-color: rgba(30,30,30,0.8);
 
 	.menu-panel{
 		text-align: center;
@@ -100,6 +126,7 @@ body {
 	width: 100%;
 	height: 100%;
 	top: 0;
+	background-color: rgba(30,30,30,0.8);
 
 	.content-header{
 		width: $gld9;
@@ -136,16 +163,15 @@ body {
 
 	.content-header{
 		width: 100% !important;
-		background-color: rgba(30,30,30,0.9);
 		position: fixed;
 		height: 20em;
+		background-color: rgba(30,30,30,0.8);
 	}
 
 	.content-main{
 		width: 100% !important;
 		margin: 20em 0 0 0;
 	}
-
 }
 
 .resume{
