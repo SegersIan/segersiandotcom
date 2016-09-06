@@ -52,7 +52,6 @@ $fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
 
 .content-header{
 	@extend .gld-med;
-	//@extend .border-yellow;
 	text-align: center;
 	height: 100%;
 	overflow: hidden;
@@ -92,6 +91,15 @@ body {
 
 a{
 	color: $colorText;
+}
+
+.instructions{
+	z-index: 500;
+	position: absolute;
+	top: 75%;
+	margin: 0 30% 0 30%;
+	width: auto;
+	text-align: center;
 }
 
 #menu {
