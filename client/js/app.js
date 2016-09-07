@@ -37,11 +37,12 @@ app.config([ '$routeProvider', function($routeProvider) {
 app.run(['$rootScope', function($rootScope) {
 	$rootScope.$on( "$routeChangeStart", function(event, next, current) {
 		
-		// In case of hot linking > Make sure the content panel is visible
-		if(!current && next.originalPath !== '/'){
+		// In case of hot linking > Make sure the content panel is visible and the menu hidden
+		if(current === undefined && next.$$route.redirectTo !== '/' && next.$$route.originalPath !== '/'){
+			console.log('I AM ADDING THIS');
 			$('#menu').addClass('mover');
 			$('#content').addClass('mover');
 		}
-		
+	
 	});
 }]);
