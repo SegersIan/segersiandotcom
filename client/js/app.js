@@ -35,13 +35,32 @@ app.config([ '$routeProvider', function($routeProvider) {
 }]);
 
 app.run(['$rootScope', function($rootScope) {
-	$rootScope.$on( "$routeChangeStart", function(event, next, current) {
-				
-		// In case of hot linking > Make sure the content panel is visible and the menu hidden
-		if(current === undefined && next.$$route.redirectTo !== '/' && next.$$route.originalPath !== '/'){
+	
+	$rootScope.$on("$routeChangeSuccess", function(event, next, previous) {
+		
+		if(isHotlinkVisit(previous, next) || isReturnFromRootToAnyRoute(next, previous)){
 			$('#menu').addClass('mover');
 			$('#content').addClass('mover');
+		}else if(isReturnFromAnyRouteToRoot(next, previous)){
+			$('#menu').removeClass('mover');
+			$('#content').removeClass('mover');
+		}
+		
+		function isHotlinkVisit(previous, next){
+			// Detects if the user opens the website with a url that does not target the root route
+			return previous === undefined && next.$$route.redirectTo !== '/' && next.$$route.originalPath !== '/';
+		}
+		
+		function isReturnFromAnyRouteToRoot(next, previous) {
+			// Detects if the users clicked "back" and goes from any route than the root to the root route.
+			return next !== undefined && next.$$route.originalPath === '/' && previous !== undefined && previous.$$route.originalPath !== '/';
+		}
+		
+		function isReturnFromRootToAnyRoute(next, previous) {
+			// Detects if the users clicked "back" and goes from the root route to any other route.
+			return next !== undefined && next.$$route.originalPath !== '/' && previous !== undefined && previous.$$route.originalPath === '/';
 		}
 		
 	});
+	
 }]);
