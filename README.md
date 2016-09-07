@@ -9,7 +9,7 @@ You need `gulp` if you want to benefit from the file watcher + sass.
 
 - For local development run `gulp watch`.
 - For local serve run `gulp serve`.
-- **TODO :** publish task
+- For production usage, run `gulp publish`, all the artifacts will be placed in the `output` folder in the repo root.
 
 ## Stack & Tools ##
 - NPM

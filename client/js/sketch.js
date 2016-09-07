@@ -1,5 +1,5 @@
 /*
-    I used the source provided by a tutorial from : Webdesignermagazine.nl (credits)
+    (credits) I used the source provided by a tutorial from : Webdesignermagazine.nl
  */
 
 var particles = [];
