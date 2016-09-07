@@ -1,4 +1,4 @@
 angular.module('myApp')
-	.controller('ThisSiteController', function($rootScope) {
+	.controller('ThisSiteController', [ '$rootScope', function($rootScope) {
 		$rootScope.title = 'site';
-	});
+	}]);

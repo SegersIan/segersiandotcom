@@ -1,4 +1,4 @@
 angular.module('myApp')
-	.controller('SocialContactController', function($rootScope) {
+	.controller('SocialContactController', [ '$rootScope', function($rootScope) {
 		$rootScope.title = 'contact';
-	});
+	}]);

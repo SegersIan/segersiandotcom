@@ -1,5 +1,5 @@
 angular.module('myApp')
-	.controller('ResumeController', function($rootScope) {
+	.controller('ResumeController', [ '$rootScope', function($rootScope) {
 		$rootScope.title = 'resume';
 		
 		initialize();
@@ -76,4 +76,4 @@ angular.module('myApp')
 			};
 		}
 		
-	});
+	}]);

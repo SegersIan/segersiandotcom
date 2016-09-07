@@ -1,5 +1,5 @@
 angular.module('myApp')
-	.controller('AppController', function($scope, $location, $timeout) {
+	.controller('AppController', [ '$scope', '$location', '$timeout', function($scope, $location, $timeout) {
 				
 		$scope.onKeyPress = onKeyPress;
 		$scope.goToRoute = goToRoute;
@@ -55,4 +55,4 @@ angular.module('myApp')
 			$('#content').removeClass('mover');
 		}
 		
-	});
+	}]);

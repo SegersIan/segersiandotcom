@@ -1,4 +1,4 @@
 angular.module('myApp')
-	.controller('PageNotFoundController', function($rootScope) {
+	.controller('PageNotFoundController', [ '$rootScope',function($rootScope) {
 		$rootScope.title = '404';
-	});
+	}]);

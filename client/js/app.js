@@ -1,6 +1,6 @@
 var app = angular.module('myApp', ['ngRoute']);
 
-app.config(function($routeProvider) {
+app.config([ '$routeProvider', function($routeProvider) {
 	
 	// Bootstrap client side routes
 	$routeProvider
@@ -32,9 +32,9 @@ app.config(function($routeProvider) {
 			{ redirectTo: '/404' }
 		);
 	
-});
+}]);
 
-app.run( function($rootScope, $location) {
+app.run(['$rootScope', function($rootScope) {
 	$rootScope.$on( "$routeChangeStart", function(event, next, current) {
 		
 		// In case of hot linking > Make sure the content panel is visible
@@ -44,4 +44,4 @@ app.run( function($rootScope, $location) {
 		}
 		
 	});
-});
+}]);
