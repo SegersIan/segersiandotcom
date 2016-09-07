@@ -44,7 +44,6 @@ body {
 	margin: 0 0 0 0;
 	overflow-x: hidden;
 	background-color: $colorBackground;
-
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -155,6 +154,21 @@ body {
 
 @media all and (max-width: 1200px){
 
+	.menu-flex-subcontainer:nth-of-type(1) {
+		flex-basis: 100%;
+		height: 35%;
+	}
+
+	.menu-flex-subcontainer:nth-of-type(2) {
+		flex-basis: 100%;
+		height: 30%;
+	}
+
+	.menu-flex-subcontainer:nth-of-type(3) {
+		flex-basis: 100%;
+		height: 35%;
+	}
+
 	.content-flex-container{
 		display: block;
 		width: 100%;
@@ -164,55 +178,27 @@ body {
 	.content-header{
 		width: 100% !important;
 		position: fixed;
-		height: 20em;
+		height: 23em;
 		background-color: rgba(30,30,30,0.8);
 	}
 
 	.content-main{
 		width: 100% !important;
-		margin: 20em 0 0 0;
+		margin: 23em 0 0 0;
+	}
+
+
+	#content-pane-contact{
+		height: auto !important;
+	}
+
+	#content-pane-site{
+		height: auto !important;
 	}
 }
 
-.resume{
-	padding: 1em 1em 1em 1em;
-
-	h1{
-		color: $colorDefaultBlue;
-	}
-
-	h2{
-		color: $colorHighlightBlue;
-	}
-
-	h3{
-		color: $colorGoldBrown;
-	}
-
-	progress {
-		background-color: inherit;
-		border: 1px solid $colorGoldBrown;
-	}
-
-	progress::-webkit-progress-bar {
-		background-color: inherit;
-	}
-
-	progress::-webkit-progress-value {
-		background-color: $colorGoldBrown;
-	}
-
-	progress::-moz-progress-bar {
-		background-color: inherit;
-	}
-
-	ul:nth-child(2){
-		@extend .tab;
-	}
-
-	ul{
-		list-style-type: none;
-	}
+.content-pane{
+	padding: 0 2em 0 2em;
 
 	.json{
 		text-align: left;
@@ -229,4 +215,88 @@ body {
 			color: $colorGoldBrown
 		}
 	}
+
+
+	h1{
+		color: $colorDefaultBlue;
+		font-size: 1.6em;
+
+	}
+
+	h2{
+		color: $colorHighlightBlue;
+		font-size: 1.1rem;
+	}
+
+	h3{
+		color: $colorGoldBrown;
+	}
+
+	ul{
+		list-style: none;
+
+	}
+
+	.vertical-center{
+
+
+	}
+}
+
+#content-pane-site{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	height: 100%;
+
+	li{
+		margin: 0 0 0 -2.4em;
+	}
+}
+
+
+
+#content-pane-contact{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	height: 100%;
+
+	ul{
+		list-style: none;
+
+	}
+
+	li{
+		margin: 0 0 0.2em -2em;
+	}
+
+	i{
+		margin: 0 0.5em 0 0;
+		display: inline-block;
+		width: 1em;
+	}
+}
+
+#content-pane-resume{
+
+	.flex-container{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: stretch;
+		align-content: center;
+
+		.flex-item{
+			flex-basis: 50%;
+		}
+
+		li{
+			margin: 0 0 0.5em 0;
+		}
+	}
+
 }
