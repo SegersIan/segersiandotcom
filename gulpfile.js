@@ -42,6 +42,17 @@ gulp.task('sass-watch', function() {
 /*******************************
 	Publish build tasks
  *******************************/
+var pubPaths = {
+	target  : { dest : 'output'} ,
+	source : {
+		cwd : 'client/**',
+		html : ['templates/*.html','index.html', '!bower_components/**/*.html'],
+		assets : ['assets/**/*.*', '!assets/sass/**/*.scss'],
+		libs : ['bower_components/**/*.*','libraries/**/*.*'],
+		js : ['js/**/*.js']
+	}
+};
+
 gulp.task('sass-publish', function() {
 	return gulp.src("client/assets/sass/**/*.scss")
 		.pipe(sass({outputStyle: 'compressed'}))
@@ -52,7 +63,7 @@ gulp.task('clean', function() {
 	
 	gulp.src('client/bower_components').pipe(clean());
 	
-	return gulp.src('output').pipe(clean());
+	return gulp.src(pubPaths.target.dest).pipe(clean());
 		
 });
 
@@ -63,18 +74,17 @@ gulp.task('bower', ['clean'], function () {
 gulp.task('copy', ['clean', 'sass-publish', 'bower'], function() {
 	
 	// Copy html
-	gulp.src(['templates/*.html','index.html', '!bower_components/**/*.html'],{ cwd : 'client/**' }).pipe(gulp.dest('output'));
+	gulp.src(pubPaths.source.html,{ cwd :  pubPaths.source.cwd }).pipe(gulp.dest(pubPaths.target.dest));
 	
 	// Copy assets
-	gulp.src(['assets/**/*.*', '!assets/sass/**/*.scss'],{ cwd : 'client/**' }).pipe(gulp.dest('output'));
+	gulp.src(pubPaths.source.assets,{ cwd : pubPaths.source.cwd }).pipe(gulp.dest(pubPaths.target.dest));
 	
 	// Copy External Libs
-	gulp.src(['bower_components/**/*.*','libraries/**/*.*'],{ cwd : 'client/**' }).pipe(gulp.dest('output'));
+	gulp.src(pubPaths.source.libs,{ cwd :  pubPaths.source.cwd }).pipe(gulp.dest(pubPaths.target.dest));
 	
 	// Process JS
-	var scripts = ['js/**/*.js'];
-	gulp.src(scripts, {cwd: 'client/**'})
+	var scripts = [pubPaths.source.js];
+	gulp.src(scripts, {cwd:  pubPaths.source.cwd})
 		.pipe(uglify())
-		.pipe(gulp.dest('output'));
-	
+		.pipe(gulp.dest(pubPaths.target.dest));
 });
