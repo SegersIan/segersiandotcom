@@ -2,8 +2,6 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 var bower = require('gulp-bower');
-//var jshint = require('gulp-jshint');
-//var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync').create();
 
