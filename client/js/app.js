@@ -12,10 +12,6 @@ app.config([ '$routeProvider', function($routeProvider) {
 			templateUrl : 'templates/about.html',
 			controller : 'AboutController'
 		})
-		.when('/resume', {
-			templateUrl : 'templates/resume.html',
-			controller : 'ResumeController'
-		})
 		.when('/contact', {
 			templateUrl : 'templates/contact.html',
 			controller : 'SocialContactController'
@@ -23,6 +19,10 @@ app.config([ '$routeProvider', function($routeProvider) {
 		.when('/site', {
 			templateUrl : 'templates/site.html',
 			controller : 'ThisSiteController'
+		})
+		.when('/resume', {
+			templateUrl : 'templates/resume.html',
+			controller : 'ResumeController'
 		})
 		.when('/404', {
 			templateUrl : 'templates/404.html',
@@ -36,13 +36,12 @@ app.config([ '$routeProvider', function($routeProvider) {
 
 app.run(['$rootScope', function($rootScope) {
 	$rootScope.$on( "$routeChangeStart", function(event, next, current) {
-		
+				
 		// In case of hot linking > Make sure the content panel is visible and the menu hidden
 		if(current === undefined && next.$$route.redirectTo !== '/' && next.$$route.originalPath !== '/'){
-			console.log('I AM ADDING THIS');
 			$('#menu').addClass('mover');
 			$('#content').addClass('mover');
 		}
-	
+		
 	});
 }]);

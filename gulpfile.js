@@ -83,8 +83,7 @@ gulp.task('copy', ['clean', 'sass-publish', 'bower'], function() {
 	gulp.src(pubPaths.source.libs,{ cwd :  pubPaths.source.cwd }).pipe(gulp.dest(pubPaths.target.dest));
 	
 	// Process JS
-	var scripts = [pubPaths.source.js];
-	gulp.src(scripts, {cwd:  pubPaths.source.cwd})
+	gulp.src(pubPaths.source.js, {cwd:  pubPaths.source.cwd})
 		.pipe(uglify())
 		.pipe(gulp.dest(pubPaths.target.dest));
 });

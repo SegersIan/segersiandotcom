@@ -6,6 +6,9 @@ angular.module('myApp')
 		
 		function onKeyPress(event) {
 			
+			// Ignore keys on usual key combinations
+			if(event.altKey || event.ctrlKey || event.shiftKey || event.metaKey) return;
+			
 			switch (event.keyCode){
 				case 27 : { // ESC
 					goToRoute('/');
