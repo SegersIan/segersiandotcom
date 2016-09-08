@@ -113,15 +113,18 @@
 
 					<div class="content-header">
 
-						<div class="content-header-flex">
+						<div class="content-header-flex" ng-click="goToRoute('/')">
 							<span class="profile-image"></span>
 							<h1>{{ title }}</h1>
-							<span>
-								<br>
-								<div ng-click="goToRoute('/')" class="clickable" ><span class="blink"><i class="fa fa-chevron-left"></i></span> <span>back  (<span class="short-key">esc</span>)</span></div>
+							<span class="cta-go-back" >
+								<span class="blink">
+									<i class="fa fa-chevron-left"></i>
+								</span>
+								<span>back  (
+									<span class="short-key">esc</span>)
+								</span>
 							</span>
 						</div>
-
 					</div>
 
 					<div class="content-main">
