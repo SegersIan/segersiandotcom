@@ -156,12 +156,11 @@ body {
 
 
 // Iphone 4
-/*
-@media all and (max-width: 640px) and (max-height:  960px){
+
+@media all and (orientation: portrait){
 
 	h1{
 		font-size: 3.5vh !important;
-		color: #9adbf5 !important;
 	}
 
 	i{
@@ -169,7 +168,7 @@ body {
 	}
 
 	.profile-image{
-		$size : 20vh;
+		$size : 18vh;
 		height: $size;
 		width: $size;
 		background: url("../img/profile.jpg") center ;
@@ -177,51 +176,14 @@ body {
 	}
 
 	.name{
-		font-size: 3.5vh;
+		font-size: 3.0vh;
 	}
 
 	.instructions{
 		font-size: 2vh;
-		width: 85vw;
+		width: 80vw;
 		display: inline-block;
 	}
-
-}*/
-
-// Iphone 4
-@media screen and (max-width: 760px) and (max-height:  1334px){
-
-	h1{
-		font-size: 3.5vh !important;
-		color: #60894d !important;
-	}
-
-	i{
-		font-size: 6vh !important;
-	}
-
-	.profile-image{
-		$size : 20vh;
-		height: $size;
-		width: $size;
-		background: url("../img/profile.jpg") center ;
-		background-size: $size $size;
-	}
-
-	.name{
-		font-size: 3.5vh;
-	}
-
-	.instructions{
-		font-size: 2vh;
-		width: 85vw;
-		display: inline-block;
-	}
-
-}
-/*
-
-@media all and (max-width: 1200px){
 
 	.menu-flex-subcontainer:nth-of-type(1) {
 		flex-basis: 100%;
@@ -263,7 +225,42 @@ body {
 	#content-pane-site{
 		height: auto !important;
 	}
-}*/
+
+}
+
+// Iphone 4
+/*
+@media screen and (max-width: 760px) and (max-height:  1334px){
+
+	h1{
+		font-size: 3.5vh !important;
+	}
+
+	i{
+		font-size: 6vh !important;
+	}
+
+	.profile-image{
+		$size : 18vh;
+		height: $size;
+		width: $size;
+		background: url("../img/profile.jpg") center ;
+		background-size: $size $size;
+	}
+
+	.name{
+		font-size: 3.0vh;
+	}
+
+	.instructions{
+		font-size: 2vh;
+		width: 80vw;
+		display: inline-block;
+	}
+
+}
+
+*/
 
 .content-pane{
 	padding: 0 2em 0 2em;
