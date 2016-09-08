@@ -152,6 +152,75 @@ body {
 
 }
 
+
+
+
+// Iphone 4
+/*
+@media all and (max-width: 640px) and (max-height:  960px){
+
+	h1{
+		font-size: 3.5vh !important;
+		color: #9adbf5 !important;
+	}
+
+	i{
+		font-size: 6vh !important;
+	}
+
+	.profile-image{
+		$size : 20vh;
+		height: $size;
+		width: $size;
+		background: url("../img/profile.jpg") center ;
+		background-size: $size $size;
+	}
+
+	.name{
+		font-size: 3.5vh;
+	}
+
+	.instructions{
+		font-size: 2vh;
+		width: 85vw;
+		display: inline-block;
+	}
+
+}*/
+
+// Iphone 4
+@media screen and (max-width: 760px) and (max-height:  1334px){
+
+	h1{
+		font-size: 3.5vh !important;
+		color: #60894d !important;
+	}
+
+	i{
+		font-size: 6vh !important;
+	}
+
+	.profile-image{
+		$size : 20vh;
+		height: $size;
+		width: $size;
+		background: url("../img/profile.jpg") center ;
+		background-size: $size $size;
+	}
+
+	.name{
+		font-size: 3.5vh;
+	}
+
+	.instructions{
+		font-size: 2vh;
+		width: 85vw;
+		display: inline-block;
+	}
+
+}
+/*
+
 @media all and (max-width: 1200px){
 
 	.menu-flex-subcontainer:nth-of-type(1) {
@@ -187,7 +256,6 @@ body {
 		margin: 23em 0 0 0;
 	}
 
-
 	#content-pane-contact{
 		height: auto !important;
 	}
@@ -195,7 +263,7 @@ body {
 	#content-pane-site{
 		height: auto !important;
 	}
-}
+}*/
 
 .content-pane{
 	padding: 0 2em 0 2em;
@@ -254,8 +322,6 @@ body {
 		margin: 0 0 0 -2.4em;
 	}
 }
-
-
 
 #content-pane-contact{
 	display: flex;
