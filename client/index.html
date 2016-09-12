@@ -28,6 +28,7 @@
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="bower_components/angular-route/angular-route.min.js"></script>
+
 		<script src="libraries/p5.min.js"></script>
 		<script src="js/sketch.js"></script>
 
@@ -35,7 +36,7 @@
 
 	<body ng-app="myApp" ng-controller="AppController" ng-keydown="onKeyPress($event)">
 
-		<div id="root">
+		<div id="root" >
 
 			<div id="menu">
 
@@ -131,16 +132,56 @@
 
 					<div class="content-main">
 
-						<div class="content-main-flex">
-							<div ng-view></div>
+
+						<div class="content-main-flex" id="scrollArea">
+
+								<div ng-view></div>
 						</div>
 
 					</div>
-
 				</div>
 			</div>
 
+
 		</div>
+
+		<style>
+
+
+		</style>
+
+		<script>
+
+			document.onload = function () {
+				touchScroll('scrollArea');
+			};
+
+			/*  touchscreen scrolling : credits to http://chris-barr.com/2010/05/scrolling_a_overflowauto_element_on_a_touch_screen_device/ */
+			function isTouchDevice(){
+				try{
+					return true;
+				}catch(e){
+					return false;
+				}
+			}
+
+			function touchScroll(id){
+				if(isTouchDevice()){
+					var el=document.getElementById(id);
+					var scrollStartPos=0;
+
+					document.getElementById(id).addEventListener("touchstart", function(event) {
+						scrollStartPos=this.scrollTop+event.touches[0].pageY;
+						event.preventDefault();
+					},false);
+
+					document.getElementById(id).addEventListener("touchmove", function(event) {
+						this.scrollTop=scrollStartPos-event.touches[0].pageY;
+						event.preventDefault();
+					},false);
+				}
+			}
+		</script>
 
 		<script src="js/app.js"></script>
 		<script src="js/controllers/app.controller.js"></script>
