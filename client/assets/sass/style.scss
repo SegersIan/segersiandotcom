@@ -12,6 +12,8 @@ $colorCommentGreen : rgb(96, 137, 77);
 /* Fonts */
 $fontFamilyTextEditor : "Menlo";
 $fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
+$defaultFontSizeLandscape : 1vh;
+$defaultFontSizePortrait : 1vw;
 
 /* Imports */
 @import "golden-ratio";
@@ -48,7 +50,6 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	font-size: 1vw;
 }
 
 /* Generic */
@@ -72,7 +73,7 @@ body {
 	transform: translate(-100%, 0);
 }
 
-$profileImageSize: 14.0em;
+$profileImageSize: 18.0em;
 
 .profile-image{
 	display: inline-block;
@@ -84,7 +85,6 @@ $profileImageSize: 14.0em;
 }
 
 .profile-image:hover{
-	$profileImageSize : 14.0em;
 	display: inline-block;
 	border-radius: 50%;
 	height: $profileImageSize;
@@ -95,6 +95,7 @@ $profileImageSize: 14.0em;
 
 /* Main menu */
 #menu {
+	font-size: $defaultFontSizeLandscape;
 
 	transition: all 0.4s, transform 0.4s ease;
 	height: 100%;
@@ -112,7 +113,7 @@ $profileImageSize: 14.0em;
 	}
 
 	h1{
-		font-size: 2.5em;
+		font-size: 3.5em;
 
 		.short-key{
 			font-size: inherit;
@@ -120,22 +121,18 @@ $profileImageSize: 14.0em;
 	}
 
 	i{
-		font-size: 5.5em;
+		font-size: 7.5em;
 	}
 
 	.name{
-		font-size: 2.0em;
-	}
-
-	.blink{
-		font-size: 1.0em;
+		font-size: 3.0em;
 	}
 
 	.instructions{
 		display: inline-block;
-		font-size: 1.5em;
+		font-size: 2.0em;
 		position: fixed;
-		margin: 5vw 0 0 0;
+		margin: 5em 0 0 0;
 		left: 10em;
 		right: 10em;
 
@@ -148,6 +145,7 @@ $profileImageSize: 14.0em;
 
 /* Content container */
 #content {
+	font-size: $defaultFontSizeLandscape;
 	transition: all 0.4s, transform 0.4s ease;
 
 	left: 100%;
@@ -156,81 +154,107 @@ $profileImageSize: 14.0em;
 
 	position: absolute;
 	top: 0;
-	bottom: 0;
-
-	z-index: 9999;
 
 	background-color: rgba(30,30,30,0.8);
+
 	.content-header{
 		width: $gld9;
 		overflow: hidden;
 		text-align: center;
+		@extend .clickable;
 	}
 
 	.content-main{
 		width: $gld10;
-		overflow-y: scroll;
-		-webkit-overflow-scrolling: touch;
 	}
 
 	.content-header-flex{
-		height: 22em;
+		height: 34em;
 		width: inherit;
 		position: absolute;
-		margin: -11em 0 0 0;
+		margin: -15em 0 0 0;
 		top: 50%;
 		overflow: hidden;
-	}
 
-	.content-main-flex{
-		height:100vh;
-		display: inline-block;
-		overflow:auto;
+		h1{
+			font-size: 3.5em;
+		}
+
+		i, .cta-return{
+			font-size: 2.5em;
+		}
 	}
 
 	.content-main{
-		width: $gld10;
 
-		.content-pane{
+		.content-main-flex{
+			height:100vh;
+			display: inline-block;
+			overflow:auto;
+			-webkit-overflow-scrolling: touch;
 
-			overflow-y: auto;
+			.content-pane{
+				padding: 0 1em 1em 1em;
 
-			padding: 0 1em 1em 1em;
+				.json{
+					text-align: left;
+					font-size: 2.0em;
 
-			.json{
-				text-align: left;
+					.field{
+						color: $colorHighlightBlue;
+					}
 
-				.field{
+					.comment{
+						color: $colorCommentGreen !important;
+					}
+
+					.value-string{
+						color: $colorGoldBrown
+					}
+				}
+
+				h1{
+					color: $colorDefaultBlue;
+					font-size: 3.5em;
+				}
+
+				h2{
 					color: $colorHighlightBlue;
+					font-size: 3.0em;
 				}
 
-				.comment{
-					color: $colorCommentGreen !important;
+				h3{
+					color: $colorGoldBrown;
+					font-size: 2.5em;
 				}
 
-				.value-string{
-					color: $colorGoldBrown
+				p{
+					font-size: 2.0em;
 				}
-			}
 
-			h1{
-				color: $colorDefaultBlue;
-			}
+				li{
+					font-size: 2.0em;
+				}
 
-			h2{
-				color: $colorHighlightBlue;
-			}
+				li > h3{
+					font-size: 1em;
+				}
 
-			h3{
-				color: $colorGoldBrown;
-			}
+				li > ul > li{
+					font-size: 1em;
+				}
 
-			ul{
-				list-style: none;
-			}
+				li > ul > li > p{
+					font-size: 1em;
+				}
 
-			.tab{
-				margin-left: 2em;
+				ul{
+					list-style: none;
+				}
+
+				.tab{
+					margin-left: 2em;
+				}
 			}
 		}
 	}
@@ -240,9 +264,7 @@ $profileImageSize: 14.0em;
 @media all and (orientation: portrait){
 
 	#menu{
-		*{
-			font-size: 1.2vh;
-		}
+		font-size: $defaultFontSizePortrait;
 
 		.instructions{
 			margin: 3em 0 0 0;
@@ -268,45 +290,9 @@ $profileImageSize: 14.0em;
 	}
 
 	#content{
+		font-size: $defaultFontSizePortrait;
 
-		*{
-			font-size: 1.0vh;
-		}
-
-		p{
-			font-size: 1em;
-		}
-
-		h1{
-			font-size: 1.5em;
-		}
-
-		.content-flex-container{
-			display: block;
-			width: 100%;
-			overflow-y: scroll;
-		}
-
-		.content-header {
-			width: 100% !important;
-			position: fixed;
-			background-color: rgba(30, 30, 30, 0.8);
-
-			h1{
-				font-size: 2em;
-			}
-
-			.cta-return{
-				font-size: 1.8em;
-
-				.short-key{
-					font-size: inherit;
-				}
-			}
-
-		}
-
-		$profileImageSize: 10em;
+		$profileImageSize: 16em;
 
 		.profile-image{
 			margin: 1em 0 0 0;
@@ -321,31 +307,50 @@ $profileImageSize: 14.0em;
 			background-size: $profileImageSize $profileImageSize;
 		}
 
-		.content-main{
-			width: 100% !important;
-			margin: 18em 0 0 0;
+		.content-header{
+			width: 100%;
+			height: 26em;
 		}
 
-		.json > span{
-			font-size: 1em;
-		}
+		.content-header-flex{
+			margin: 0 0 0 0;
+			z-index: 999999999;
+			background-color: rgba(30,30,30,0.5);
+			top: 0;
+			height: inherit;
 
-		#content-pane-contact{
-			height: auto !important;
-		}
+			h1{
+				font-size: 2.0em;
+			}
 
-		#content-pane-site{
-			height: auto !important;
-		}
-
-		.content-pane{
-			padding: 0 0.5em 0.5em 0.5em;
-			font-size: 2em;
-
-			.json > span{
-				font-size: 2em;
+			i, .cta-return{
+				font-size: 1.8em;
 			}
 		}
+
+		.content-main{
+			width: 100%;
+
+			.content-main-flex{
+				height:100vh;
+				display: inline-block;
+				overflow:auto;
+				-webkit-overflow-scrolling: touch;
+
+				.content-pane{
+					padding: 0 1em 1em 1em;
+
+					h1{
+						font-size: 3.5em;
+					}
+
+					h2{
+						font-size: 3.0em;
+					}
+
+				}
+			}
+		}
+
 	}
 }
-
