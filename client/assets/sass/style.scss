@@ -23,25 +23,25 @@ $fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
 *{
 	color: $colorText;
 	font-family: $fontFamilyTextEditor;
-	font-size: 1em;
 }
 
 #root {
 	width: 100%;
 	height: 100%;
+	overflow-x: hidden;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
+	bottom: 0;
 }
 
 html,
 body {
-	width: 100%;
-	height: 100%;
 	padding: 0 0 0 0;
 	margin: 0 0 0 0;
-	overflow-x: hidden;
+	width: 100%;
+	height: 100%;
 	background-color: $colorBackground;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -59,10 +59,6 @@ body {
 	cursor: pointer;
 }
 
-.border-yellow{
-	border: 1px solid #ffff00;
-}
-
 .tab{
 	margin-left: 2em;
 }
@@ -72,26 +68,6 @@ body {
 	font-weight: bold;
 }
 
-.profile-image{
-	$size : 12em;
-	display: inline-block;
-	border-radius: 50%;
-	height: $size;
-	width: $size;
-	background: url("../img/profile.jpg") center ;
-	background-size: $size $size;
-}
-
-.profile-image:hover{
-	$size : 12em;
-	display: inline-block;
-	border-radius: 50%;
-	height: $size;
-	width: $size;
-	background: url("../img/profile_alt.jpg") center ;
-	background-size: $size $size;
-}
-
 /* Classes for transition effect */
 .mover {
 	transform: translate(-100%, 0);
@@ -99,6 +75,7 @@ body {
 
 /* Main menu */
 #menu {
+
 	transition: all 0.4s, transform 0.4s ease;
 	height: 100%;
 	background-color: rgba(30,30,30,0.8);
@@ -113,6 +90,65 @@ body {
 		align-self: center;
 		flex-basis: 100%;
 	}
+
+	*{
+		font-size: 1vw;
+	}
+
+	h1{
+		font-size: 2.5em;
+
+		.short-key{
+			font-size: inherit;
+		}
+	}
+
+	i{
+		font-size: 5.5em;
+	}
+
+	.name{
+		font-size: 2.0em;
+	}
+
+	.blink{
+		font-size: 1.0em;
+	}
+
+	$profileImageSize: 14.0em;
+
+	.profile-image{
+		display: inline-block;
+		border-radius: 50%;
+		height: $profileImageSize;
+		width: $profileImageSize;
+		background: url("../img/profile.jpg") center ;
+		background-size: $profileImageSize $profileImageSize;
+	}
+
+	.profile-image:hover{
+		$profileImageSize : 14.0em;
+		display: inline-block;
+		border-radius: 50%;
+		height: $profileImageSize;
+		width: $profileImageSize;
+		background: url("../img/profile_alt.jpg") center ;
+		background-size: $profileImageSize $profileImageSize;
+	}
+
+	.instructions{
+		display: inline-block;
+		font-size: 1.5em;
+		position: fixed;
+		margin: 5vw 0 0 0;
+		left: 10em;
+		right: 10em;
+
+		.short-key{
+			font-size: inherit;
+		}
+	}
+
 }
 
 /* Content container */
@@ -149,31 +185,18 @@ body {
 	}
 }
 
-// Iphone 4
 @media all and (orientation: portrait){
-
-	.content-flex-container{
-		display: block;
-		width: 100%;
-		overflow-y: scroll;
-	}
 
 	#menu{
 
-		h1{
-			font-size: 3.5vh !important;
+		*{
+			font-size: 1.2vh;
 		}
 
-		i{
-			font-size: 6vh;
-		}
-
-		.profile-image{
-			$size : 18vh;
-			height: $size;
-			width: $size;
-			background: url("../img/profile.jpg") center ;
-			background-size: $size $size;
+		.instructions{
+			margin: 3em 0 0 0;
+			left: 2em;
+			right: 2em;
 		}
 
 		.menu-flex-subcontainer:nth-of-type(1) {
@@ -191,18 +214,15 @@ body {
 			height: 35%;
 		}
 
-		.instructions{
-			font-size: 2vh;
-			width: 80vw;
-			display: inline-block;
-		}
-
-		.name{
-			font-size: 3.0vh;
-		}
 	}
 
 	#content{
+
+		.content-flex-container{
+			display: block;
+			width: 100%;
+			overflow-y: scroll;
+		}
 
 		.profile-image{
 			$size : 10vh;

@@ -1,14 +1,24 @@
-/* menu */
-.menu-flex-container{
+.flex-container{
+
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: stretch;
 	align-content: center;
-	height: 100%;
+
 	position: absolute;
+	height: 100%;
 	width: 100%;
+}
+
+/* menu */
+.menu-flex-container{
+	@extend .flex-container;
+}
+
+.content-flex-container{
+	@extend .flex-container;
 }
 
 .menu-flex-subcontainer{
@@ -36,14 +46,3 @@
 }
 
 /* content */
-.content-flex-container{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: stretch;
-	align-content: center;
-	height: 100%;
-	position: absolute;
-	width: 100%;
-}
