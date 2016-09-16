@@ -3,7 +3,8 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--<meta name="viewport" content="width=800px, initial-scale=1">-->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -29,9 +30,10 @@
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="bower_components/angular-route/angular-route.min.js"></script>
 
+		<!-- This causes an issue on vertical/horizantal swap on iOs (stickts to portrait mode)
 		<script src="libraries/p5.min.js"></script>
 		<script src="js/sketch.js"></script>
-
+		-->
 	</head>
 
 	<body ng-app="myApp" ng-controller="AppController" ng-keydown="onKeyPress($event)">
@@ -118,7 +120,7 @@
 							<span class="profile-image"></span>
 
 							<h1>{{ title }}</h1>
-							<span >
+							<span>
 								<span class="blink">
 									<i class="fa fa-chevron-left"></i>
 								</span>
