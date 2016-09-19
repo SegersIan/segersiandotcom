@@ -120,7 +120,6 @@ $profileImageSize: 13.0em;
 
 /* Main menu */
 #menu {
-	font-size: $defaultFontSizeLandscape;
 
 	transition: all 0.4s, transform 0.4s ease;
 	height: 100%;
@@ -194,11 +193,10 @@ $profileImageSize: 13.0em;
 	}
 
 	.content-header-flex{
-		height: 34em;
 		width: inherit;
 		position: absolute;
-		margin: -15em 0 0 0;
-		top: 50%;
+		margin: 2em 0 0 0;
+
 		overflow: hidden;
 
 		h1{
@@ -300,11 +298,65 @@ $profileImageSize: 13.0em;
 	}
 }
 
-@media (min-device-pixel-ratio: 2) and (orientation: portrait), (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait){
-	#content{
-		.content-main{
-			font-size:22px;
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2){
+
+	#menu{
+
+		h1{
+			font-size: 1.0em;
 		}
+
+		i{
+			font-size: 3.0em;
+		}
+
+		.name{
+			font-size: 1.0em;
+		}
+
+		.instructions{
+			font-size: 0.5em;
+		}
+
+		$profileImageSize: 7em;
+
+		.profile-image{
+			height: $profileImageSize;
+			width: $profileImageSize;
+			background-size: $profileImageSize $profileImageSize;
+		}
+
+		.profile-image:hover{
+			height: $profileImageSize;
+			width: $profileImageSize;
+			background-size: $profileImageSize $profileImageSize;
+		}
+
+	}
+
+	#content{
+		$profileImageSize : 10em;
+
+		font-size: 10px;
+
+		.profile-image{
+			margin: 1em 0 0 0;
+			height: $profileImageSize;
+			width: $profileImageSize;
+			background-size: $profileImageSize $profileImageSize;
+		}
+
+		.profile-image:hover{
+			height: $profileImageSize;
+			width: $profileImageSize;
+			background-size: $profileImageSize $profileImageSize;
+		}
+
+		.svg-volume{
+			height: 15px;
+			width: 15px;
+		}
+
 	}
 }
 
@@ -387,5 +439,13 @@ $profileImageSize: 13.0em;
 			}
 		}
 
+	}
+}
+
+@media (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+	#content{
+		.content-header{
+			height: 150px;
+		}
 	}
 }

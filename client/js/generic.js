@@ -1,8 +1,9 @@
+/*
 document.onload = function () {
 	touchScroll('scrollArea');
 };
 
-/*  touchscreen scrolling : credits to http://chris-barr.com/2010/05/scrolling_a_overflowauto_element_on_a_touch_screen_device/ */
+//  touchscreen scrolling : credits to http://chris-barr.com/2010/05/scrolling_a_overflowauto_element_on_a_touch_screen_device/
 function isTouchDevice(){
 	try{
 		return true;
@@ -28,4 +29,4 @@ function touchScroll(id){
 			
 		},false);
 	}
-}
+}*/
