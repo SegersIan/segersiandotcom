@@ -93,15 +93,6 @@ $profileImageSize: 13.0em;
 	transform: translate(-100%, 0);
 }
 
-.flex-container{
-	display: flex;
-	flex-direction: row;
-}
-
-.flex-container > div{
-	flex-basis: 50%;
-}
-
 
 /* Main menu */
 #menu {
@@ -156,7 +147,6 @@ $profileImageSize: 13.0em;
 
 /* Content container */
 #content {
-	//font-size: $defaultFontSizeLandscape;
 	transition: all 0.4s, transform 0.4s ease;
 
 	left: 100%;
@@ -285,6 +275,7 @@ $profileImageSize: 13.0em;
 		}
 	}
 }
+
 @media (min-device-pixel-ratio: 2) and (orientation: portrait), (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait){
 	#content{
 		.content-main{
