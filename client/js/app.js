@@ -39,11 +39,9 @@ app.run(['$rootScope', function($rootScope) {
 	$rootScope.$on("$routeChangeSuccess", function(event, next, previous) {
 		
 		if(isHotlinkVisit(previous, next) || isReturnFromRootToAnyRoute(next, previous)){
-			$('#menu').addClass('mover');
-			$('#content').addClass('mover');
+			$rootScope.contentIsShown = true;
 		}else if(isReturnFromAnyRouteToRoot(next, previous)){
-			$('#menu').removeClass('mover');
-			$('#content').removeClass('mover');
+			$rootScope.contentIsShown = false;
 		}
 		
 		function isHotlinkVisit(previous, next){

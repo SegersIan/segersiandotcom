@@ -1,5 +1,5 @@
 angular.module('myApp')
-	.controller('AppController', [ '$scope', '$location', '$timeout', function($scope, $location, $timeout) {
+	.controller('AppController', [ '$scope', '$location', '$timeout', '$rootScope', function($scope, $location, $timeout, $rootScope) {
 				
 		$scope.onKeyPress = onKeyPress;
 		$scope.goToRoute = goToRoute;
@@ -49,13 +49,11 @@ angular.module('myApp')
 		}
 		
 		function openContent() {
-			$('#menu').addClass('mover');
-			$('#content').addClass('mover');
+			$rootScope.contentIsShown = true;
 		}
 		
 		function openMenu() {
-			$('#menu').removeClass('mover');
-			$('#content').removeClass('mover');
+			$rootScope.contentIsShown = false;
 		}
 		
 	}]);
