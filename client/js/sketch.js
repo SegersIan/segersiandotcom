@@ -7,7 +7,7 @@ var bg;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    for (var i = 0; i < 170; i++) {
+    for (var i = 0; i < 80; i++) {
         particles.push(new Particle(createVector(random(width), random(height))));
     }
 }

@@ -31,10 +31,8 @@
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="bower_components/angular-route/angular-route.min.js"></script>
 
-		<!-- This causes an issue on vertical/horizantal swap on iOs (stickts to portrait mode)
 		<script src="libraries/p5.min.js"></script>
 		<script src="js/sketch.js"></script>
-		-->
 
 		<!-- Google Analytics Code -->
 		<script>
@@ -67,7 +65,7 @@
 
 	<body ng-app="myApp" ng-controller="AppController" ng-keydown="onKeyPress($event)">
 
-		<div id="root" class="full-height">
+		<div id="root">
 
 			<div id="menu" ng-class="{'mover': contentIsShown}">
 

@@ -34,6 +34,7 @@ $defaultFontSizePortrait : 16px;
 	height: 100%;
 	overflow-x: hidden;
 	position: absolute;
+	background-color: rgba(30,30,30,0.8);
 	top: 0;
 	left: 0;
 	right: 0;
@@ -52,8 +53,7 @@ body {
 	background-size: cover;
 }
 
-/* Generic */
-.full-surface{
+canvas{
 	width: 100%;
 	height: 100%;
 }
@@ -123,7 +123,7 @@ $profileImageSize: 13.0em;
 
 	transition: all 0.4s, transform 0.4s ease;
 	height: 100%;
-	background-color: rgba(30,30,30,0.8);
+	//background-color: rgba(30,30,30,0.8);
 
 	.menu-panel{
 		text-align: center;
@@ -171,36 +171,40 @@ $profileImageSize: 13.0em;
 /* Content container */
 #content {
 	transition: all 0.4s, transform 0.4s ease;
-
 	left: 100%;
+	top: 0;
 	width: 100%;
 	height: 100%;
-
 	position: absolute;
-	top: 0;
 
-	background-color: rgba(30,30,30,0.8);
+	.content-flex-container{
+		width: 100%;
+		display: flex;
+		//background-color: rgba(30,30,30,0.8);
+		flex-direction: row;
+		flex-wrap: wrap;
+		//justify-content: center;
+		//-webkit-justify-content: center;
+		//position: absolute;
+		//height: 100%;
+	}
 
 	.content-header{
 		width: $gld9;
-		overflow: hidden;
 		text-align: center;
 		@extend .clickable;
-	}
 
-	.content-main{
-		width: $gld10;
+		//overflow: hidden;
 	}
 
 	.content-header-flex{
 		width: inherit;
 		position: absolute;
 		margin: 2em 0 0 0;
-
-		overflow: hidden;
+		//overflow: hidden;
 
 		h1{
-			font-size: 2.0em;
+			//font-size: 2.0em;
 		}
 
 		i, .cta-return{
@@ -209,12 +213,14 @@ $profileImageSize: 13.0em;
 	}
 
 	.content-main{
+		width: $gld10;
 
 		.content-main-flex{
+			// This impacts the magic scroll padding
 			height:100vh;
 			display: inline-block;
 			overflow:auto;
-			-webkit-overflow-scrolling: touch;
+			//-webkit-overflow-scrolling: touch;
 
 			#content-pane-contact{
 				i{

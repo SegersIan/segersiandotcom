@@ -34,23 +34,6 @@
 	flex-basis: 100%;
 }
 
-/* content */
-.content-flex-container{
-	display: flex;
-	flex-direction: row;
-
-	flex-wrap: wrap;
-
-	justify-content: center;
-	-webkit-justify-content: center;
-
-	position: absolute;
-
-	height: 100%;
-	width: 100%;
-
-}
-
 /* generic */
 .flex-container{
 	display: flex;
