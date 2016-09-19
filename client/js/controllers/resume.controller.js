@@ -40,6 +40,7 @@ angular.module('myApp')
 				$(mySvg).find('.valuePointer').attr('stroke-width',strokeWidth);
 				
 			});
+			
 		}
 		
 		function drawMyArc(centerX, centerY, radius, startAngle, endAngle) {

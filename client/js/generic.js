@@ -13,17 +13,19 @@ function isTouchDevice(){
 
 function touchScroll(id){
 	if(isTouchDevice()){
-		var el=document.getElementById(id);
-		var scrollStartPos=0;
+		
+		var el = document.getElementById(id);
+		var scrollStartPos = 0;
 		
 		document.getElementById(id).addEventListener("touchstart", function(event) {
-			scrollStartPos=this.scrollTop+event.touches[0].pageY;
+			scrollStartPos = this.scrollTop + event.touches[0].pageY;
 			event.preventDefault();
 		},false);
 		
 		document.getElementById(id).addEventListener("touchmove", function(event) {
-			this.scrollTop=scrollStartPos-event.touches[0].pageY;
+			this.scrollTop = scrollStartPos - event.touches[0].pageY;
 			event.preventDefault();
+			
 		},false);
 	}
 }
