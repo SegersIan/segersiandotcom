@@ -1,7 +1,7 @@
 /*
     (credits) I used the source provided by a tutorial from : Webdesignermagazine.nl
  */
-
+/*
 var particles = [];
 var bg;
 
@@ -22,7 +22,7 @@ function draw() {
 }
 }
 
-//////////////////////PARTICLE CLASS///////////////////
+// ////////////////////PARTICLE CLASS///////////////////
 
 var Particle = function (position) {
     this.acceleration = createVector(0, 0.05);
@@ -84,3 +84,4 @@ Particle.prototype.display = function () {
         line(this.position.x, this.position.y, mouseX, mouseY);
     }
 };
+*/

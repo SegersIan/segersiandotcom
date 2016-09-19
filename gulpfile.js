@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 var bower = require('gulp-bower');
@@ -47,14 +48,14 @@ var pubPaths = {
 	source : {
 		cwd : 'client/**',
 		html : ['templates/*.html','index.html', '!bower_components/**/*.html'],
-		assets : ['assets/**/*.*', '!assets/sass/**/*.scss'],
+		assets : ['assets/img/**/*.*','assets/css/style.css'],
 		libs : ['bower_components/**/*.*','libraries/**/*.*'],
-		js : ['js/**/*.js']
+		js : ['js/app.js', 'js/sketch.js','js/generic.js', 'js/controllers/*.js']
 	}
 };
 
 gulp.task('sass-publish', function() {
-	return gulp.src("client/assets/sass/**/*.scss")
+	return gulp.src("client/assets/sass/style.scss")
 		.pipe(sass({outputStyle: 'compressed'}))
 		.pipe(gulp.dest("./client/assets/css"));
 });
@@ -85,5 +86,6 @@ gulp.task('copy', ['clean', 'sass-publish', 'bower'], function() {
 	// Process JS
 	gulp.src(pubPaths.source.js, {cwd:  pubPaths.source.cwd})
 		.pipe(uglify())
+		.pipe(concat('js/app.js'))
 		.pipe(gulp.dest(pubPaths.target.dest));
 });
