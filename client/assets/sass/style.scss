@@ -231,7 +231,6 @@ $profileImageSize: 13.0em;
 
 				h1{
 					color: $colorDefaultBlue;
-					//font-size: 2.0em;
 				}
 
 				h2{
@@ -286,8 +285,15 @@ $profileImageSize: 13.0em;
 		}
 	}
 }
+@media (min-device-pixel-ratio: 2) and (orientation: portrait), (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait){
+	#content{
+		.content-main{
+			font-size:22px;
+		}
+	}
+}
 
-@media all and (orientation: portrait){
+@media (orientation: portrait){
 
 	#menu{
 
@@ -315,6 +321,8 @@ $profileImageSize: 13.0em;
 
 	#content{
 
+		$headerHeight: 280px;
+		$contentHeight: auto;
 		$profileImageSize: 9em;
 
 		.profile-image{
@@ -332,15 +340,13 @@ $profileImageSize: 13.0em;
 
 		.content-header{
 			width: 100%;
-			height: 18em;
+			height: $headerHeight;
 		}
 
 		.content-header-flex{
 			margin: 0 0 0 0;
-			//z-index: 999999999;
-			background-color: rgba(30,30,30,0.5);
 			top: 0;
-			height: inherit;
+			height: auto;
 
 			h1{
 				font-size: 1.8em;
@@ -356,8 +362,7 @@ $profileImageSize: 13.0em;
 			width: 100%;
 
 			.content-main-flex{
-				//height:80vh;
-				display: inline-block;
+				height:$contentHeight;
 				overflow:auto;
 				-webkit-overflow-scrolling: touch;
 

@@ -14,12 +14,9 @@
 		height: 1024px;
 	}
 }
-// iphone5
-@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2) {
-	.scrollable {
-		height: 320px;
-	}
-}
+*/
+
+/*
 @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2) {
 	.scrollable {
 		height: 568px;
