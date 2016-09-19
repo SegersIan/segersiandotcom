@@ -68,6 +68,31 @@ body {
 	font-size: inherit;
 }
 
+.svg-volume{
+	height: 30px;
+	width: 30px;
+	background-color: inherit;
+
+	.voidMask{
+		fill:none;
+		stroke:rgb(0,0,0);
+		stroke-linecap:round;
+
+	}
+
+	.valueMask{
+		fill:none;
+		stroke:rgb(207, 145, 121);
+		stroke-linecap:round;
+	}
+
+	.valuePointer{
+		fill:none;
+		stroke:rgb(207, 145, 121);
+		stroke-linecap:round;
+	}
+}
+
 $profileImageSize: 13.0em;
 
 .profile-image{
