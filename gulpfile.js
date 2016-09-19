@@ -83,9 +83,9 @@ gulp.task('copy', ['clean', 'sass-publish', 'bower'], function() {
 	// Copy External Libs
 	gulp.src(pubPaths.source.libs,{ cwd :  pubPaths.source.cwd }).pipe(gulp.dest(pubPaths.target.dest));
 	
-	// Process JS
+	// Process JS - todo: When more time available, implement webpack.
 	gulp.src(pubPaths.source.js, {cwd:  pubPaths.source.cwd})
 		.pipe(uglify())
-		.pipe(concat('js/app.js'))
+		//.pipe(concat('js/app.js'))
 		.pipe(gulp.dest(pubPaths.target.dest));
 });
