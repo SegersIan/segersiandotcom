@@ -10,14 +10,18 @@ $colorHighlightRed : rgb(242,31,28);
 $colorCommentGreen : rgb(96, 137, 77);
 
 /* Fonts */
-$fontFamilyTextEditor : "Menlo";
-$fontFamilyOnlineJson : "Consolas, 'Courier New', monospace";
+$fontFamilyTextEditor : "Vera";
 
 /* Imports */
 @import "golden-ratio";
 @import "headers";
 @import "responsiveness";
 @import "blink";
+
+@font-face{
+	font-family: "Vera";
+	src: local("Vera"), url('../fonts/Vera.ttf');
+}
 
 /* Default HTML elements */
 *{
