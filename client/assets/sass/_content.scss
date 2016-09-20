@@ -1,0 +1,71 @@
+.content-pane{
+
+	.json{
+		text-align: left;
+
+		.field{
+			color: $colorHighlightBlue;
+		}
+
+		.comment{
+			color: $colorCommentGreen !important;
+		}
+
+		.value-string{
+			color: $colorGoldBrown
+		}
+	}
+
+	h1{
+		color: $colorDefaultBlue;
+	}
+
+	h2{
+		color: $colorHighlightBlue;
+		font-size: 1.7em;
+	}
+
+	h3{
+		color: $colorGoldBrown;
+		font-size: 1.4em;
+	}
+
+	p{
+		font-size: 1.0em;
+	}
+
+	ul{
+		list-style: none;
+	}
+
+	li{
+		font-size: 1.0em;
+		margin: 0.5em 0 0 0;
+	}
+
+	ul > li > h3{
+		font-size: 1em;
+	}
+
+	ul > li > ul > li{
+		font-size: 1em;
+	}
+
+	.jobs{
+		ul > li > ul > li:nth-child(4){
+			margin: 1em 0 0 0;
+		}
+
+		ul > li > ul > li:nth-child(5){
+			margin: 1em 0 0 0;
+		}
+
+		ul > li > ul > li:nth-child(6){
+			margin: 1em 0 0 0;
+		}
+	}
+
+	.tab{
+		margin-left: 2em;
+	}
+}

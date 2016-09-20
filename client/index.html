@@ -65,7 +65,7 @@
 
 		<div id="root">
 
-			<div id="menu" ng-class="{'mover': contentIsShown}">
+			<div id="menu" ng-class="{'effect-page-slide': contentIsShown}">
 
 				<div class="menu-flex-container">
 
@@ -98,7 +98,7 @@
 								<span class="profile-image"></span>
 								<br><br>
 								<span class="name">
-									ian segers<span class="blink">_</span>
+									ian segers<span class="effect-blink">_</span>
 								</span>
 
 								<span class="instructions">
@@ -143,12 +143,12 @@
 				<h1>{{ title }}</h1>
 
 				<span class="cta-return">
-					<i class="fa fa-chevron-left blink"></i><span >back(<span class="short-key">esc</span>)</span>
+					<i class="fa fa-chevron-left effect-blink"></i><span >back(<span class="short-key">esc</span>)</span>
 				</span>
 
 			</div>
 
-			<div id="content" ng-class="{'mover': contentIsShown}">
+			<div id="content" ng-class="{'effect-page-slide': contentIsShown}">
 				<div ng-view></div>
 			</div>
 
