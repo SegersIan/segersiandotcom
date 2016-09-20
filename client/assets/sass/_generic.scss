@@ -1,0 +1,31 @@
+/* generic */
+.clickable{
+	cursor: pointer;
+}
+
+.short-key{
+	color: $colorGoldBrown;
+	font-weight: bold;
+	font-size: inherit;
+}
+
+.profile-image{
+	$profileImageSize: 15em;
+	margin: 1em 0 0 0;
+	display: inline-block;
+	border-radius: 50%;
+	height: $profileImageSize;
+	width: $profileImageSize;
+	background: url("../img/profile.jpg") center ;
+	background-size: $profileImageSize $profileImageSize;
+}
+
+.profile-image:hover{
+	$profileImageSize: 15em;
+	display: inline-block;
+	border-radius: 50%;
+	height: $profileImageSize;
+	width: $profileImageSize;
+	background: url("../img/profile_alt.jpg") center ;
+	background-size: $profileImageSize $profileImageSize;
+}
