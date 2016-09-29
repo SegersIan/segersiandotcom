@@ -7,7 +7,7 @@
 @import "effects";
 @import "content";
 @import "generic";
-@import "responsiveness";
+
 
 /* HTML elements */
 *{
@@ -146,3 +146,5 @@ body {
 
 }
 */
+
+@import "responsiveness";

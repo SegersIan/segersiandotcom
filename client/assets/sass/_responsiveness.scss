@@ -1,81 +1,4 @@
-// iPhone 6 Plus and iPhone 6s Plus : Portrait
-/*
-@media screen and (max-device-width: 414px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2),
-screen and (max-device-width: 414px) and (orientation: portrait) and (min-device-pixel-ratio: 2)
-{
-	body{
-		font-size: 60%;
-	}
-
-	#menu{
-		.instructions{
-			font-size: 70%;
-		}
-	}
-
-	#content-header{
-
-		$profileImageSize: 7.5em;
-
-		.profile-image{
-			height: $profileImageSize;
-			width: $profileImageSize;
-			background-size: $profileImageSize $profileImageSize;
-		}
-
-		.profile-image:hover{
-			height: $profileImageSize;
-			width: $profileImageSize;
-			background-size: $profileImageSize $profileImageSize;
-		}
-
-		h1{
-			font-size: 90%;
-		}
-
-		.cta-return{
-			font-size: 70%;
-		}
-	}
-
-	#content{
-		margin: 110px 0 0 0;
-	}
-
-}
-
-// iPhone 6 Plus and iPhone 6s Plus : landscape
-@media screen and (max-device-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2),
-screen and (max-device-width: 736px) and (orientation: landscape) and (min-device-pixel-ratio: 2)
-{
-	body{
-		font-size: 60%;
-	}
-
-	#menu{
-		.instructions{
-			font-size: 70%;
-		}
-	}
-
-	#content-header{
-		$profileImageSize: 12.5em;
-
-		.profile-image{
-			height: $profileImageSize;
-			width: $profileImageSize;
-			background-size: $profileImageSize $profileImageSize;
-		}
-
-		.profile-image:hover{
-			height: $profileImageSize;
-			width: $profileImageSize;
-			background-size: $profileImageSize $profileImageSize;
-		}
-	}
-}
-*/
-// all screens in portrait
+// Default styling for portrait mode
 @media screen and (orientation: portrait){
 
 	#menu{
@@ -87,36 +10,47 @@ screen and (max-device-width: 736px) and (orientation: landscape) and (min-devic
 			align-self: stretch;
 		}
 
-		.menu-panel{
-			width: 500px;
-		}
-
 		.menu-flex-subcontainer:nth-of-type(1){
-			flex-basis: 100% !important;
+			flex-basis: 100%;
 		}
 
 		.menu-flex-subcontainer:nth-of-type(3){
-			flex-basis: 100% !important;
+			flex-basis: 100%;
 		}
 
 		.instructions{
 			padding: 1em 1em 0 1em;
 		}
+
 	}
+}
 
-	/*
-	#content-header{
-		position: absolute;
-		width: 100%;
-		margin: 0 0 0 0;
-	}
+@media 	screen and (-webkit-min-device-pixel-ratio: 2),
+		screen and (min-device-pixel-ratio: 2)
+{
+	#menu{
+		font-size: 10px;
 
-	#content{
-		padding: 0 0 0 0;
-		width: 100%;
+		$profileImageSize: 12em;
 
-		.content-pane{
-			padding: 0 2% 0 2%;
+		.profile-image{
+			height: $profileImageSize;
+			width: $profileImageSize;
+			background-size: $profileImageSize $profileImageSize;
 		}
-	}*/
+
+		.profile-image:hover{
+			height: $profileImageSize;
+			width: $profileImageSize;
+			background-size: $profileImageSize $profileImageSize;
+		}
+
+		.name{
+			margin: 0 0 0.5em 0;
+		}
+
+		.instructions{
+			display: none;
+		}
+	}
 }
