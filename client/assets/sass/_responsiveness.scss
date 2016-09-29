@@ -28,6 +28,10 @@
 		position: absolute;
 		width: 100%;
 		margin: 0 0 0 0;
+
+		h1{
+			font-size: 01.25em;
+		}
 	}
 
 	#content{
@@ -65,6 +69,22 @@
 
 		.instructions{
 			display: none;
+		}
+	}
+
+	#content-header{
+		$profileImageSize: 10em;
+
+		.profile-image{
+			height: $profileImageSize;
+			width: $profileImageSize;
+			background-size: $profileImageSize $profileImageSize;
+		}
+
+		.profile-image:hover{
+			height: $profileImageSize;
+			width: $profileImageSize;
+			background-size: $profileImageSize $profileImageSize;
 		}
 	}
 
