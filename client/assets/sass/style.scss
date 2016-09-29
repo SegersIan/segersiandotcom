@@ -18,7 +18,8 @@
 body {
 	@extend .reset;
 
-	background-color: $colorBackground;
+	//background-color: $colorBackground;
+	background: url("../img/background.png");
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
