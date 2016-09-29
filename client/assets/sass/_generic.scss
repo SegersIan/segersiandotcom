@@ -34,3 +34,8 @@
 	padding: 0 0 0 0;
 	margin: 0 0 0 0;
 }
+
+.reverse {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+}
