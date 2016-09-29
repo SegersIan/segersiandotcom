@@ -109,7 +109,7 @@ body {
 	}
 
 }
-/*
+
 #content-header{
 
 	@extend .clickable;
@@ -120,6 +120,20 @@ body {
 	margin: 5em 0 0 0;
 
 	@extend .effect-fade-in;
+
+	$profileImageSize: 10em;
+
+	.profile-image{
+		height: $profileImageSize;
+		width: $profileImageSize;
+		background-size: $profileImageSize $profileImageSize;
+	}
+
+	.profile-image:hover{
+		height: $profileImageSize;
+		width: $profileImageSize;
+		background-size: $profileImageSize $profileImageSize;
+	}
 
 	i{
 		margin-right: 0.5em;
@@ -145,6 +159,6 @@ body {
 	}
 
 }
-*/
+
 
 @import "responsiveness";

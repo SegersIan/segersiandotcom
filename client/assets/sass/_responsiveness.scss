@@ -23,6 +23,20 @@
 		}
 
 	}
+
+	#content-header{
+		position: absolute;
+		width: 100%;
+		margin: 0 0 0 0;
+	}
+
+	#content{
+		margin: 260px 0 0 0;
+		width: 100%;
+		.content-pane{
+			padding: 0 2% 0 2%;
+		}
+	}
 }
 
 @media 	screen and (-webkit-min-device-pixel-ratio: 2),
@@ -53,4 +67,32 @@
 			display: none;
 		}
 	}
+
+	#content{
+		font-size: 12px;
+	}
+}
+
+@media 	screen and (max-device-height: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2),
+		screen and (max-device-height: 736px) and (orientation: landscape) and (min-device-pixel-ratio: 2)
+{
+
+	#content-header{
+		margin: 0 0 0 0;
+
+		$profileImageSize: 8em;
+
+		.profile-image{
+			height: $profileImageSize;
+			width: $profileImageSize;
+			background-size: $profileImageSize $profileImageSize;
+		}
+
+		.profile-image:hover{
+			height: $profileImageSize;
+			width: $profileImageSize;
+			background-size: $profileImageSize $profileImageSize;
+		}
+	}
+
 }
