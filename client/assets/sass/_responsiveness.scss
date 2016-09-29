@@ -1,5 +1,5 @@
-
 // iPhone 6 Plus and iPhone 6s Plus : Portrait
+/*
 @media screen and (max-device-width: 414px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2),
 screen and (max-device-width: 414px) and (orientation: portrait) and (min-device-pixel-ratio: 2)
 {
@@ -74,35 +74,37 @@ screen and (max-device-width: 736px) and (orientation: landscape) and (min-devic
 		}
 	}
 }
-
-
+*/
 // all screens in portrait
 @media screen and (orientation: portrait){
 
 	#menu{
 
+		.menu-flex-subcontainer{
+			flex-direction:row;
+			flex-basis: 100%;
+			-webkit-align-self: stretch;
+			align-self: stretch;
+		}
+
+		.menu-panel{
+			width: 500px;
+		}
+
+		.menu-flex-subcontainer:nth-of-type(1){
+			flex-basis: 100% !important;
+		}
+
+		.menu-flex-subcontainer:nth-of-type(3){
+			flex-basis: 100% !important;
+		}
+
 		.instructions{
-			left: 2em;
-			right: 2em;
+			padding: 1em 1em 0 1em;
 		}
-
-		.menu-flex-subcontainer:nth-of-type(1) {
-			flex-basis: 100%;
-			height: 35%;
-		}
-
-		.menu-flex-subcontainer:nth-of-type(2) {
-			flex-basis: 100%;
-			height: 30%;
-		}
-
-		.menu-flex-subcontainer:nth-of-type(3) {
-			flex-basis: 100%;
-			height: 35%;
-		}
-
 	}
 
+	/*
 	#content-header{
 		position: absolute;
 		width: 100%;
@@ -116,5 +118,5 @@ screen and (max-device-width: 736px) and (orientation: landscape) and (min-devic
 		.content-pane{
 			padding: 0 2% 0 2%;
 		}
-	}
+	}*/
 }

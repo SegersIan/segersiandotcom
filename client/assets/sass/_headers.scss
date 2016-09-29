@@ -1,6 +1,5 @@
 h1, h2, h3{
 	text-transform: lowercase;
-	font-weight: normal;
 }
 
 h1:before{
@@ -26,4 +25,3 @@ h3:before{
 h3:after{
 	content: "}";
 }
-

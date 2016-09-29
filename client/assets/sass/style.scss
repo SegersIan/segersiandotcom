@@ -15,10 +15,8 @@
 	font-family: $defaultFontFamily;
 }
 
-html,
 body {
-	padding: 0 0 0 0;
-	margin: 0 0 0 0;
+	@extend .reset;
 
 	background-color: $colorBackground;
 	-webkit-background-size: cover;
@@ -33,13 +31,15 @@ body {
 
 /* root */
 #root {
-	padding: 0 0 0 0;
-	margin: 0 0 0 0;
+
+	@extend .reset;
+
 	width: 100%;
 	height: 100%;
 	overflow-x: hidden;
 	position: absolute;
 	background-color: rgba(30,30,30,0.8);
+
 	top: 0;
 	left: 0;
 	right: 0;
@@ -50,41 +50,45 @@ body {
 #menu {
 	@extend .effect-page-slide-transition;
 	height: 100%;
+	width: 100%;
+
+	.instructions{
+		text-align: center;
+		.short-key{
+			font-size: inherit;
+		}
+	}
 
 	.menu-flex-container{
 		display: flex;
+		height: 94%;
+
 		flex-direction: row;
 		flex-wrap: wrap;
-
 		justify-content: center;
 		-webkit-justify-content: center;
 		align-items: stretch;
 		-webkit-align-items: center;
+	}
 
-		position: absolute;
-		height: 100%;
-		width: 100%;
+	.menu-flex-subcontainer{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: stretch;
+		align-content: center;
+	}
 
-		.menu-flex-subcontainer{
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: stretch;
-			align-content: center;
-		}
+	.menu-flex-subcontainer:nth-of-type(1){
+		flex-basis: 36%;
+	}
 
-		.menu-flex-subcontainer:nth-of-type(1){
-			flex-basis: 38.5%;
-		}
+	.menu-flex-subcontainer:nth-of-type(3){
+		flex-basis: 36%;
+	}
 
-		.menu-flex-subcontainer:nth-of-type(3){
-			flex-basis: 38.5%;
-		}
-
-		.menu-flex-single-column{
-			flex-basis: 100%;
-		}
-
+	.menu-flex-single-column{
+		flex-basis: 100%;
 	}
 
 	.menu-panel{
@@ -98,39 +102,14 @@ body {
 		flex-basis: 100%;
 	}
 
-	h1{
-		font-size: 2.0em;
-
-		.short-key{
-			font-size: inherit;
-		}
-	}
-
-	i{
-		font-size: 5.0em;
-	}
-
 	.name{
+		display: block;
+		margin: 1em 0 0 0;
 		font-size: 2.0em;
-	}
-
-	.instructions{
-
-		display: inline-block;
-		font-size: 1.0em;
-		position: fixed;
-
-		left: 10em;
-		right: 10em;
-		bottom: 2.0em;
-
-		.short-key{
-			font-size: inherit;
-		}
 	}
 
 }
-
+/*
 #content-header{
 
 	@extend .clickable;
@@ -148,7 +127,7 @@ body {
 
 }
 
-/* Content container */
+// Content container
 #content {
 
 	@extend .effect-page-slide-transition;
@@ -166,3 +145,4 @@ body {
 	}
 
 }
+*/
