@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Main website of IanSegers.com",
   "main": "index.js",
-  "author": "",
+  "author": "Ian Segers",
   "license": "ISC",
   "scripts": {
     "postinstall": "bower install",
