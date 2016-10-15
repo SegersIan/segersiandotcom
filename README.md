@@ -20,7 +20,7 @@ You need `gulp` if you want to benefit from the file watcher + sass.
 - Angular v1.5.x
 
 ## More Information ##
-Please go to to my website : <a href="http://www.iansegers.com">IanSegers.Com</a>
+Please go to to my website : <a href="http://www.segersian.com">SegersIan.com</a>
 
 ## Contact ##
-Mail me on `iansegers@gmail.com`
+Mail me on `contact@segersian.com`
