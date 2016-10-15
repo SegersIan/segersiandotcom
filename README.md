@@ -1,4 +1,4 @@
-# IanSegers.Com #
+# SegersIan.com #
 
 ## Purpose ##
 The goal of this project is purely to show case my technical effort and skill of coding and tools that I used for my website (IanSegers.com). 
