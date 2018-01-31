@@ -4,6 +4,10 @@ body {
 	padding-top: 80px;
 }
 
+.separator-x1 {
+	margin-top: 50px;
+}
+
 .separator-x2 {
 	margin-top: 100px;
 }
@@ -11,6 +15,17 @@ body {
 .comment {
 	color: gray;
 	font-style: italic;
+}
+
+.social-links > a {
+	text-decoration: none;
+	color: inherit;
+	border: 1px solid;
+	padding: 0 5px 0 5px;
+}
+
+.social-links > i {
+	margin: 0 5px 0 10px;
 }
 
 .profile-image {
