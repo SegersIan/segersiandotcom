@@ -1,162 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>SegersIan.com</title>
+	<title>SegersIan.com</title>
 
-		<!-- Open Graph -->
-		<meta property="fb:app_id" content="1105559616193411" />
-		<meta property="og:title" content="SegersIan.com" />
-		<meta property="og:locale" content="en_GB" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="http://www.segersian.com" />
-		<meta property="og:site_name" content="www.segersian.com" />
-		<meta property="og:image" content="http://www.segersian.com/assets/img/profile.jpg" />
-		<meta property="og:description" content="Learn more about Ian Segers, his blogs, his resume and his projects." />
+	<!-- Open Graph -->
+	<meta property="fb:app_id" content="1105559616193411"/>
+	<meta property="og:title" content="SegersIan.com"/>
+	<meta property="og:locale" content="en_GB"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="http://www.segersian.com"/>
+	<meta property="og:site_name" content="www.segersian.com"/>
+	<meta property="og:image" content="http://www.segersian.com/assets/img/profile.jpg"/>
+	<meta property="og:description"
+	      content="Learn more about Ian Segers, his blogs, his resume and his projects."/>
 
-		<!-- Stylesheets -->
-		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/style.css" >
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="assets/css/index.css">
 
-		<!-- JS -->
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="bower_components/angular/angular.min.js"></script>
-		<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<!-- JS -->
+	<!-- Google Analytics Code -->
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-		<!-- Google Analytics Code -->
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-						(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-76745643-1', 'auto');
+		ga('send', 'pageview');
 
-			ga('create', 'UA-76745643-1', 'auto');
-			ga('send', 'pageview');
+	</script>
 
-		</script>
+	<!-- Facebook Pixel Code -->
+	<script>
+		!function (f, b, e, v, n, t, s) {
+			if (f.fbq) return;
+			n = f.fbq = function () {
+				n.callMethod ?
+					n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+			};
+			if (!f._fbq) f._fbq = n;
+			n.push = n;
+			n.loaded = !0;
+			n.version = '2.0';
+			n.queue = [];
+			t = b.createElement(e);
+			t.async = !0;
+			t.src = v;
+			s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s)
+		}(window,
+			document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
 
-		<!-- Facebook Pixel Code -->
-		<script>
-			!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-					n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-				n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-				t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-					document,'script','https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '544706742388128');
+		fbq('track', "PageView");
+	</script>
+	<noscript>
+		<img height="1" width="1" style="display:none"
+		     src="https://www.facebook.com/tr?id=544706742388128&ev=PageView&noscript=1"/>
+	</noscript>
 
-			fbq('init', '544706742388128');
-			fbq('track', "PageView");
-		</script>
-		<noscript>
-			<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=544706742388128&ev=PageView&noscript=1"/>
-		</noscript>
+</head>
 
-	</head>
+<body>
 
-	<body ng-app="myApp" ng-controller="AppController" ng-keydown="onKeyPress($event)">
+<img src="./assets/img/profile.jpg" alt="Profile Image" class="profile-image">
 
-		<div id="root">
+<h1>SegersIan.com</h1>
 
-			<div id="menu" ng-class="{'effect-page-slide': contentIsShown}">
 
-				<div class="menu-flex-container">
+<p>
+	During the day you can find me @ <a href="https://www.saveboost.com"
+	                                    target="_blank">Saveboost</a>, creating experiences.
+</p>
 
-					<div class="menu-flex-subcontainer">
+<p class="separator-x2 comment">
+	&lt!-- under development --&gt
+</p>
 
-						<div class="menu-panel clickable" ng-click="goToRoute('/about')">
-							<div class="menu-panel-content">
-								<div>
-									<i class="fa fa-question-circle-o fa-5x"></i>
-								</div>
-								<div>
-									<h1><span class="short-key">A</span>bout</h1>
-								</div>
-							</div>
-						</div>
-
-						<div class="menu-panel clickable" ng-click="goToRoute('/resume')">
-							<div class="menu-panel-content">
-								<div>
-									<i class="fa fa-rocket fa-5x"></i>
-								</div>
-								<div>
-									<h1><span class="short-key">R</span>esume</h1>
-								</div>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="menu-flex-subcontainer">
-						<div class="menu-panel menu-flex-single-column">
-							<div class="menu-panel-content">
-								<span class="profile-image"></span>
-								<span class="name">segers ian<span class="effect-blink">_</span></span>
-							</div>
-						</div>
-					</div>
-
-					<div class="menu-flex-subcontainer" >
-
-						<div class="menu-panel clickable" ng-click="goToRoute('/contact')">
-							<div class="menu-panel-content">
-								<div>
-									<i class="fa fa-share-alt fa-5x"></i>
-								</div>
-								<div>
-									<h1><span class="short-key">c</span>ontact</h1>
-								</div>
-							</div>
-						</div>
-
-						<div class="menu-panel clickable" ng-click="goToRoute('/site')">
-							<div class="menu-panel-content">
-								<div>
-									<i class="fa fa-code fa-5x"></i>
-								</div>
-								<div>
-									<h1><span class="short-key">s</span>ite</h1>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="instructions">
-					This website is keyboard friendly, press <span class="short-key">a, r, c</span> or <span class="short-key">s</span> to navigate.
-				</div>
-
-			</div>
-
-			<div id="content-header" ng-show="contentIsShown" ng-click="goToRoute('/')">
-
-				<span class="profile-image"></span>
-
-				<h1>{{ title }}</h1>
-
-				<span class="cta-return">
-					<i class="fa fa-chevron-left effect-blink"></i><span >back (<span class="short-key">esc</span>)</span>
-				</span>
-
-			</div>
-
-			<div id="content" ng-class="{'effect-page-slide': contentIsShown}">
-				<div ng-view></div>
-			</div>
-
-		</div>
-
-		<script src="js/app.js"></script>
-		<script src="js/generic.js"></script>
-		<script src="js/controllers/app.controller.js"></script>
-		<script src="js/controllers/resume.controller.js"></script>
-		<script src="js/controllers/about.controller.js"></script>
-		<script src="js/controllers/socialcontact.controller.js"></script>
-		<script src="js/controllers/site.controller.js"></script>
-
-	</body>
+</body>
 
 </html>

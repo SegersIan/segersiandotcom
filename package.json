@@ -1,27 +1,11 @@
 {
-  "name": "iansegersdotcom",
+  "name": "segersiandotcom",
   "version": "1.0.0",
-  "description": "Main website of IanSegers.com",
+  "description": "Main website of SegersIan.com",
   "main": "index.js",
   "author": "Ian Segers",
   "license": "ISC",
   "scripts": {
-    "postinstall": "bower install",
-    "prestart": "npm install",
-    "start": "http-server -a localhost -p 8000 -c-1 ./client",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "update-index-async": "node -e \"var fs=require('fs'),indexFile='client/index-async.html',loaderFile='client/assets/bower_components/angular-loader/angular-loader.min.js',loaderText=fs.readFileSync(loaderFile,'utf-8').split(/sourceMappingURL=angular-loader.min.js.map/).join('sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map'),indexText=fs.readFileSync(indexFile,'utf-8').split(/\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/).join('//@@NG_LOADER_START@@\\n'+loaderText+'    //@@NG_LOADER_END@@');fs.writeFileSync(indexFile,indexText);\""
-  },
-  "devDependencies": {
-    "bower": "^1.7.9",
-    "browser-sync": "^2.14.0",
-    "gulp": "^3.9.1",
-    "gulp-bower": "0.0.13",
-    "gulp-clean": "^0.3.2",
-    "gulp-concat": "^2.6.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.0.0",
-    "gulp-webpack": "^1.5.0",
-    "http-server": "^0.9.0"
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

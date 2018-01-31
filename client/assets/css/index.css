@@ -1,0 +1,69 @@
+body {
+	font-family: "Menlo", "Vera", monospace;
+	text-align: center;
+	padding-top: 80px;
+}
+
+.separator-x2 {
+	margin-top: 100px;
+}
+
+.comment {
+	color: gray;
+	font-style: italic;
+}
+
+.profile-image {
+	height: 300px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-animation: blur 10s infinite;
+	animation: blur 10s infinite;
+}
+
+@-webkit-keyframes blur {
+	0% {
+		-webkit-filter: hue-rotate(0deg) saturate(200%);
+		filter: hue-rotate(0deg) saturate(200%);
+	}
+	25% {
+		-webkit-filter: hue-rotate(90deg) saturate(200%);
+		filter: hue-rotate(90deg) saturate(200%);
+	}
+	50% {
+		-webkit-filter: hue-rotate(180deg) saturate(200%);
+		filter: hue-rotate(180deg) saturate(200%);
+	}
+	75% {
+		-webkit-filter: hue-rotate(270deg) saturate(200%);
+		filter: hue-rotate(270deg) saturate(200%);
+	}
+	100% {
+		-webkit-filter: hue-rotate(360deg) saturate(200%);
+		filter: hue-rotate(360deg) saturate(200%);
+	}
+}
+
+@keyframes blur {
+	0% {
+		-webkit-filter: hue-rotate(0deg) saturate(200%);
+		filter: hue-rotate(0deg) saturate(200%);
+	}
+	25% {
+		-webkit-filter: hue-rotate(90deg) saturate(200%);
+		filter: hue-rotate(90deg) saturate(200%);
+	}
+	50% {
+		-webkit-filter: hue-rotate(180deg) saturate(200%);
+		filter: hue-rotate(180deg) saturate(200%);
+	}
+	75% {
+		-webkit-filter: hue-rotate(270deg) saturate(200%);
+		filter: hue-rotate(270deg) saturate(200%);
+	}
+	100% {
+		-webkit-filter: hue-rotate(360deg) saturate(200%);
+		filter: hue-rotate(360deg) saturate(200%);
+	}
+}
