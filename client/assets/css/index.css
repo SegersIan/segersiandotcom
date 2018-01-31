@@ -22,10 +22,11 @@ body {
 	color: inherit;
 	border: 1px solid;
 	padding: 0 5px 0 5px;
+	margin: 10px 0 0 0;
 }
 
 .social-links > i {
-	margin: 0 5px 0 10px;
+	margin: 10px 5px 0 10px;
 }
 
 .profile-image {
