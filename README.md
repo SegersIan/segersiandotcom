@@ -1,3 +1,0 @@
-# SegersIan.com #
-
-Awaiting rewrite...
