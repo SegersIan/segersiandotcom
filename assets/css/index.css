@@ -1,0 +1,118 @@
+body {
+	font-family: "Menlo", "Vera", monospace;
+	text-align: center;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+.separator-x1 {
+	margin-top: 50px;
+}
+
+.separator-x2 {
+	margin-top: 100px;
+}
+
+.comment {
+	color: gray;
+	font-style: italic;
+}
+
+.social-links {
+	padding: 0 10px 0 10px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+@media screen and (max-width: 500px) {
+	.social-links{
+		margin-top: 0;
+		flex-direction: column;
+		-webkit-flex-direction: column;
+	}
+	.social-link {
+		margin-top: 10px;
+	}
+}
+
+p,h1{
+	padding: 0 16px 0 16px;
+}
+
+
+
+.social-link > a {
+	text-decoration: none;
+	display: inline-block;
+	color: inherit;
+	border: 1px solid;
+	padding: 0 5px 0 5px;
+	margin: 10px 0 0 0;
+	width: 75px;
+}
+
+.social-link > i {
+	margin: 10px 0px 0 10px;
+}
+
+.profile-image {
+	height: 300px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-animation: blur 10s infinite;
+	animation: blur 10s infinite;
+}
+
+@media screen and (max-width: 500px) {
+	.profile-image {
+		height: 200px;
+	}
+}
+
+@-webkit-keyframes blur {
+	0% {
+		-webkit-filter: hue-rotate(0deg) saturate(200%);
+		filter: hue-rotate(0deg) saturate(200%);
+	}
+	25% {
+		-webkit-filter: hue-rotate(90deg) saturate(200%);
+		filter: hue-rotate(90deg) saturate(200%);
+	}
+	50% {
+		-webkit-filter: hue-rotate(180deg) saturate(200%);
+		filter: hue-rotate(180deg) saturate(200%);
+	}
+	75% {
+		-webkit-filter: hue-rotate(270deg) saturate(200%);
+		filter: hue-rotate(270deg) saturate(200%);
+	}
+	100% {
+		-webkit-filter: hue-rotate(360deg) saturate(200%);
+		filter: hue-rotate(360deg) saturate(200%);
+	}
+}
+
+@keyframes blur {
+	0% {
+		-webkit-filter: hue-rotate(0deg) saturate(200%);
+		filter: hue-rotate(0deg) saturate(200%);
+	}
+	25% {
+		-webkit-filter: hue-rotate(90deg) saturate(200%);
+		filter: hue-rotate(90deg) saturate(200%);
+	}
+	50% {
+		-webkit-filter: hue-rotate(180deg) saturate(200%);
+		filter: hue-rotate(180deg) saturate(200%);
+	}
+	75% {
+		-webkit-filter: hue-rotate(270deg) saturate(200%);
+		filter: hue-rotate(270deg) saturate(200%);
+	}
+	100% {
+		-webkit-filter: hue-rotate(360deg) saturate(200%);
+		filter: hue-rotate(360deg) saturate(200%);
+	}
+}

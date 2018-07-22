@@ -1,6 +1,4 @@
 node_modules
-client/bower_components
-assets/css/*.css
 npm-debug.log
 .idea
 .DS_Store
