@@ -56,6 +56,15 @@ p,h1{
 	margin: 10px 0px 0 10px;
 }
 
+.deprecating > a {
+	color: lightgray;
+	border-color: lightgray;
+}
+
+.deprecating > i {
+	color: lightgray;
+}
+
 .profile-image {
 	height: 300px;
 	border-radius: 50%;
